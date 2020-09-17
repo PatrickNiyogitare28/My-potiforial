@@ -129,3 +129,17 @@ nav ul li:hover{
 .page-footer img{
     width: 45px;
 }
+.font-aswesome-color-white{
+    color: white;
+    font-size: 2em !important;
+}
+.font-aswesome-color-white:hover{
+    color: #ED994B;
+}
+.social-media-wrapper{
+    clear: both;
+     width: 200px;
+    display: flex;
+    justify-content: space-between;
+    
+}
