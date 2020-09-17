@@ -48,6 +48,21 @@ nav ul li{
 nav ul li:hover{
     color: #ED994B;
 }
+.join-me-btn{
+    border-width: 0px;
+    background: #ED994B;
+    color: white;
+    width: 80px;
+    padding: 10px;
+    border-radius: 20px 20px;
+    font-family: 'Century Gothic';
+    font-weight: lighter;
+    cursor: pointer;
+}
+.join-me-btn:hover{
+    background: #cf853f;
+    transform: scale(1.1);
+}
 .font-family{
     font-family: 'Century Gothic';
 }
@@ -102,20 +117,20 @@ nav ul li:hover{
     background: #ED994B;
     margin-top: 10px;
 }
-.join-btn-wrapper{
-    width: 25%;
+.read-btn-wrapper{
+    width: 35%;
     margin-top: 3em;
 }
-.join-btn-wrapper button{
+.read-btn-wrapper button{
     width: 100%;
     border-radius: 10px;
     border-width: 0px;
     color : #ffff;
     padding: 20px;
     background: #ED994B;
-    font-size: 2em;
+    font-size: 1.5em;
 }
-.join-btn-wrapper button:hover{
+.read-btn-wrapper button:hover{
     background: #cf853f;
     cursor: pointer;
 }
