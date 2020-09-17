@@ -48,6 +48,13 @@ nav ul li{
 nav ul li:hover{
     color: #ED994B;
 }
+nav ul li a{
+    text-decoration: none;
+    color: #ffff;
+}
+nav ul li  a:hover{
+    color: #ED994B;
+}
 .join-me-btn{
     border-width: 0px;
     background: #ED994B;
