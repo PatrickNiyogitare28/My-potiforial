@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+body{
+ background-image: url('../assetes/index-bg-img.png');
+ 
+ background-repeat: no-repeat;
+ background-size: cover;
+
+}
+.page-container{
+    width: 100%;
+    height: 100%;
+  
+}
+.main-container{
+  padding: 2em;  
+  width: 95%;
+  justify-content: center;
+}
+.top-corner-angles{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.top-corner-angles img{
+    width: 45px;
+}
+nav{
+    width: 30%;
+    float: right;
+    margin-right: 4em;
+    margin-top: -2.5em;
+}
+nav ul{
+    display: inline;
+    display: flex;
+    justify-content: space-between;
+}
+nav ul li{
+    font-size: 20px;
+    list-style-type: none;
+    
+    color: #ffff;
+}
+nav ul li:hover{
+    color: #ED994B;
+}
+.font-family{
+    font-family: 'Century Gothic';
+}
+.cursor-pointer{
+    cursor: pointer;
+}
+.hightrigt-wrapper{
+    width: 90%;
+    margin: 0 5%;
+    padding: 20px;
+}
+.profile-img-wrapper{
+    width: 35%;
+    float: left;
+
+}
+.profile-img-wrapper img{
+    object-fit: cover;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 9px solid #ED994B;
+    background-color: silver;
+}
+.hightright-text-wrapper{
+    width: 60%;
+    float: left;
+    padding-top: 20px;
+    margin-right: 3em;
+}
+.hightright-text-wrapper h1{
+    color: #ED994B;
+    font-size: 5em;
+}
+.hightright-text-wrapper h1 small{
+    font-size: 50%;
+    color: #ffff;
+}
+.hightright-text-wrapper h1 small span{
+    font-size: 2em;;
+    /* color: black; */
+}
+.hightright-text-wrapper h3{
+    color: #ffff;
+    font-weight: lighter;
+    font-size: 2.3em;
+}
+.highright-border-btm{
+    width: 40%;
+    height: 20px;
+    border-radius: 20px 20px;
+    background: #ED994B;
+    margin-top: 10px;
+}
+.join-btn-wrapper{
+    width: 25%;
+    margin-top: 3em;
+}
+.join-btn-wrapper button{
+    width: 100%;
+    border-radius: 10px;
+    border-width: 0px;
+    color : #ffff;
+    padding: 20px;
+    background: #ED994B;
+    font-size: 2em;
+}
+.join-btn-wrapper button:hover{
+    background: #cf853f;
+    cursor: pointer;
+}
+.page-footer{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 7em;
+   
+}
+.page-footer img{
+    width: 45px;
+}
