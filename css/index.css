@@ -133,9 +133,9 @@ nav ul li  a:hover{
     border-radius: 10px;
     border-width: 0px;
     color : #ffff;
-    padding: 20px;
+    padding: 15px;
     background: #ED994B;
-    font-size: 1.5em;
+    font-size: 1.3em;
 }
 .read-btn-wrapper button:hover{
     background: #cf853f;
@@ -153,7 +153,7 @@ nav ul li  a:hover{
 }
 .font-aswesome-color-white{
     color: white;
-    font-size: 2em !important;
+    font-size: 2.7em !important;
 }
 .font-aswesome-color-white:hover{
     color: #ED994B;
