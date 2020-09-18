@@ -52,6 +52,10 @@ nav ul li button{
     cursor: pointer;
     font-family: 'Century Gothic';
 }
+nav ul li button:hover{
+   transform: scale(1.1);
+   background: #f8f7f7;
+}
 .cursor-pointer{
     cursor: pointer;
 }
@@ -216,4 +220,7 @@ main{
 .footer-content-wrapper p{
     font-size: 13px;
     color: #ffff;
+}
+.font-aswesome-color-white:hover{
+    color: #ED994B;
 }
