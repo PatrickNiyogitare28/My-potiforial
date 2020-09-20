@@ -60,7 +60,7 @@ nav ul li button:hover{
     cursor: pointer;
 }
 nav ul li:nth-child(3){
-    border-bottom: 7px solid #ffff;
+    border-bottom: 5px solid #ffff;
     margin-bottom: 5px;
   
 }

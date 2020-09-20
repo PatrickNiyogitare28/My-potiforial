@@ -13,7 +13,7 @@ header{
     background: #ED994B;
     align-content: center;
     position: sticky;
-    top: 0;
+    top: 0; 
 }
 nav{
     width: 100%;
@@ -65,145 +65,94 @@ nav ul li button:hover{
 .cursor-pointer{
     cursor: pointer;
 }
-nav ul li:nth-child(2){
+nav ul li:nth-child(4){
     border-bottom: 5px solid #ffff;
     margin-bottom: 5px;
-      
-} 
+  
+}
 main{
     width: 100%;
-    height: auto;
-    background: #363535;
-}
-.about-primary-description-container{
-    height: 100px;
-    padding: 4em;
-    width: 80%;
-    background: rgb(65,62,62);
-    background: linear-gradient(90deg, rgba(65,62,62,1) 0%, rgba(65,62,62,1) 65%, rgba(54,53,53,1) 65%);
-}
-.description-text-wrapper{
-    width: 70%;
-    float: left;
-}
-.page-number-wrapper{
-    width: 30%;
-    float: right;
-}
-.page-number-wrapper h1{
-    text-align: center;
-    font-size: 6em;
-    color: #ffff;
-    
-}
-
-.description-text-wrapper h1{
-    color: rgb(223, 219, 219);
-  width: 30%;
-   
-}
-.border-top{
-    width: 10%;
-    padding: 5px;
-    background: #ED994B;
-    border-radius: 20px 20px;
-}
-.description-text-wrapper  small{
-    color: rgb(223, 219, 219);
-    
-}
-.skill-wrapper{
-    width: 100%;
-    /* background: white; */
-    margin-top: -2.5em;
-    
-}
-.skills-highright{
-    width: 60%;
-    float: right;
-}
-.skills-highright p span{
-    color: #ED994B;
-}
-.skills-highright p{
-   font-size: 1.5em;
-    color: #ffff; 
-}
-.other-skills-wrapper{
-   width: 30%;
-   margin-left: 4em;
-   background: #413e3e;
-   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-   border-radius: 5px 5px;
-}
-.other-skills-wrapper ul{
-    padding: 40px;
-}
-.other-skills-wrapper ul li{
-    padding: 5px;
-    color: rgb(206, 201, 201);
-    list-style-type: none;
-}
-.other-skills-wrapper ul li::before {
-    content: "•   ";
-    color: #ED994B; /* or whatever color you prefer */
-    padding-right: 5px;
-  }
-  .tools-wrapper{
-      margin-top: 1em;
-      width: 90%;
-      padding: 10px;
-      display: grid;
-      grid-template-columns: auto auto;
-    
-  }
-
-  progress {
-    background-color: #ED994B;
-    border: 0;
-    height: 18px;
-    border-radius: 20px 20px;
-    
-  }
-  .tool-item{
-    margin-top: 1em;
     display: flex;
-  }
- .tool-item img{
-     width: 90%;
- }
- .blanding{
-     width: 95%;
-     padding: 2em;
-    display: grid;
-     grid-template-columns: auto auto auto;
+    justify-content: space-around;
+}
+.blogs-container{
+    padding: 2em;
+    width: 85%;
     
- }
- .blanding-item{
-     width: 50%;
-     margin-left: 30%;
+   margin-top: 2em;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.blog-story-wrapper{
+    width: 65%;
+    /* height: 500px; */
+    background: #494545;
+    border-radius: 20px 20px;
+   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+   padding: 2em;
+    
+}
+.blog-story-wrapper h2{
+    font-family: 'Montserrat', sans-serif;
+    /* font-family: 'Oswald', sans-serif; */
+    color: #f8f7f7;
+    margin-bottom: 5px;
+}
+.blog-story-wrapper img{
+    width: 100%; 
+    height: 300px;
+}
+.blog-story-wrapper small{
+    color: rgb(240, 236, 236);
+    font-weight: lighter;
+    float: right;
+    display: block;
+    margin-bottom: 1em;
+}
+.blog-story-wrapper p{
+    clear: both;
+    color: #c7c5c5;
+    font-weight: lighter;
+    font-family: Arial, Helvetica, sans-serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.blog-item{
+    padding: 20px;
+}
+.blog-item h3{
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+}
+.blog-item img{
+    width: 100%;
+    height: 80%;
+}
+.blog-item small{
+    color: rgb(238, 238, 247);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.other-blogs-wrapper{
+    width:25%;
    
- }
- .blanding .number{
-     width: 200px;
-     height: 200px;
-     border-radius: 50%;
-     color:  #fff;
-     background: #413e3e;
-     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-   
- }
- .blanding .number p{
-     text-align: center;
-     padding: 100px;
- }
- .blanding p{
-     text-align: center;
- }
- .blanding .number-description{
-     padding-top: 10px;
-     color: #ED994B
- }
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around; */
+    /* background: yellow; */
+}
+.blog-item{
+    float: right;
+    width: 100%;
+    background-color: #494545;
+    height: 200px;
+    border-radius: 20px 20px;
+   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    margin-bottom: 2em;
+}
+
+
  footer{
      width: 90%;
      padding: 2em;
