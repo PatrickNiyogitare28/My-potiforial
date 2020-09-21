@@ -6,6 +6,7 @@
     <title>Patrick Bland | About</title>
     <link rel="stylesheet" href="../css/about.css">
     <link rel="stylesheet" href="../font-awesome-v4/css/font-awesome.min.css">
+    <script src="../scripts/scripts.js"></script>
    
 </head>
 <body>
@@ -20,7 +21,26 @@
         </ul>
         </nav>
     </header>
+    <div class="mobile-sidebar" id="sidebar">
+          <ul>
+          <li class="cursor-pointer"><a href="../index.html">Home</a></li>
+          <li class="cursor-pointer active-router"><a href="./html/about.html">About</a></li> 
+          <li class="cursor-pointer"><a href="./html/contact.html">Contact</a></li>
+          <li class="cursor-pointer"><a href="./html/blogs.html">Blogs</a> </li>
+          <li><a href="./html/singin.html"><button class="join-me-btn">Join me</button></a> </li>
+        </ul>
+   </div>
+
+    <div class="main-container" id="main-container">
+        
     <main>
+        <div class="mobile-toggle-headere">
+        <div class="toggle-btn" onclick="toggleSidebar()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+       </div> 
         <div class="about-primary-description-container">
            <div class="description-text-wrapper">
 
@@ -124,9 +144,10 @@
                 </div>
                 <p class="number-description">Joined Me</p>
             </div>
-
+        </div>
         
     </main>
+    </div>
     <footer>
         <div class="copyright">
             copyright PatrickNiyogitare 2020
