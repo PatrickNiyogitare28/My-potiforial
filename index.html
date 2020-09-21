@@ -6,14 +6,30 @@
     <title>Patrick Bland</title>
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="font-awesome-v4/css/font-awesome.min.css">
+
+    <script src="./scripts/scripts.js"></script>
 </head>
 <body>
     <div class="page-container">
     <main>
-        <div class="main-container">
+        <div class="mobile-sidebar" id="sidebar">
+          
+            <ul>
+              <li class="cursor-pointer"><a href="./html/about.html">About</a></li> 
+              <li class="cursor-pointer"><a href="./html/contact.html">Contact</a></li>
+              <li class="cursor-pointer"><a href="./html/blogs.html">Blogs</a> </li>
+              <li><a href="./html/singin.html"><button class="join-me-btn">Join me</button></a> </li>
+            </ul>
+           </div>
+        <div class="main-container" id="main-container">
             <div class="top-corner-angles">
                 <img src="assetes/top-left-group.png" alt="">
-               
+                
+                <div class="toggle-btn" onclick="toggleSidebar()">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
                 <img src="assetes/top-right-group.png" alt="">
                
             </div>
@@ -58,6 +74,7 @@
                 <img src="assetes/bottom-right-group.png" alt="">
             </div>
         </div>
+        
     </main>
    
 </div>
