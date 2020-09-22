@@ -78,8 +78,7 @@ main{
 .blogs-container{
     padding: 2em;
     width: 85%;
-    
-   margin-top: 2em;
+     margin-top: 2em;
     display: flex;
     justify-content: space-between;
     
@@ -182,56 +181,9 @@ main{
 .font-aswesome-color-white:hover{
     color: #ED994B;
 }
-.skill-logo{
-    width: 15%;
-
+.mobile-sidebar{
+    display: none;
 }
-.skill-logo img{
-    width: 40px;
-    height: 40px;
-    border-radius: 50% ;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+.mobile-toggle-header{
+    display: none;
 }
-.progress-bar{
-    width: 80%;
-    display: grid;
-    display: flex; 
-     
-      
-}
-.left-progress-part{
-    /* width: 30%; */
-    height: 15px;
-    background: #ED994B;
-    border-radius: 20px 0px 0px 20px;
-    /* padding: 10px; */
-}
-.right-progress-part{
-    /* width: 70%; */
-    background: silver;
-    height: 15px;
-    border-radius: 0px 20px 20px 0px;
-    /* padding: 10px; */
-}
-._20width{
-    width: 20%;
-}
-._30width{
-    width: 30%;
-}
-._40width{
-    width: 40%;
-}
-._50width{
-    width: 50%;
-}
-._60width{
-    width: 60%
-}
-._70width{
-    width: 70%;
-}
-._80width{
-    width: 80%
-}
-
