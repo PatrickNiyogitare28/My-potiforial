@@ -66,8 +66,14 @@ nav ul li:nth-child(3){
 }
 main{
     width: 100%;
-   
+    z-index: 0;
 
+}
+.mobile-toggle-header{
+  z-index: 10;
+}
+.mobile-sidebar{
+    z-index: 10;
 }
 .main-container{
    width: 90%;
@@ -186,20 +192,20 @@ main{
     margin-top: 1.4em;
 }
 .footer{
-    /* background: red; */
+  
+    /* background: #363535;
+    background: linear-gradient(90deg,  #363535 0%, #363535  65%, #413e3e 65%); */
     width: 90%;
+    /* position: absolute;
+    padding-top:-5em; */
     position: absolute;
+    bottom: 0;
+    background:transparent;
     bottom: 0;
     height: 95px;
     /* text-align: center; */
 }
-.footer-right-design{
-    height: 100%;
-    width: 20%;
-    float: right;
-    background: #413e3e;
-    margin-top: -1em;
-}
+
 .footer-content-wrapper{
     float: left;
     width: 40%;
@@ -224,3 +230,13 @@ main{
 .font-aswesome-color-white:hover{
     color: #ED994B;
 }
+.mobile-footer{
+    display: none;
+}
+.mobile-sidebar{
+    display: none;
+}
+.mobile-toggle-header{
+    display: none;
+}
+
