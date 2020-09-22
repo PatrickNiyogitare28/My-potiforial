@@ -43,14 +43,14 @@ nav ul li{
     font-size: 20px;
     list-style-type: none;
     
-    color: #ffff;
+    color: white;
 }
 nav ul li:hover{
     color: #ED994B;
 }
 nav ul li a{
     text-decoration: none;
-    color: #ffff;
+    color: white;
 }
 nav ul li  a:hover{
     color: #ED994B;
@@ -106,14 +106,14 @@ nav ul li  a:hover{
 }
 .hightright-text-wrapper h1 small{
     font-size: 50%;
-    color: #ffff;
+    color: white;
 }
 .hightright-text-wrapper h1 small span{
     font-size: 2em;;
     /* color: black; */
 }
 .hightright-text-wrapper h3{
-    color: #ffff;
+    color: white;
     font-weight: lighter;
     font-size: 2.3em;
 }
@@ -132,7 +132,7 @@ nav ul li  a:hover{
     width: 100%;
     border-radius: 10px;
     border-width: 0px;
-    color : #ffff;
+    color : white;
     padding: 15px;
     background: #ED994B;
     font-size: 1.3em;

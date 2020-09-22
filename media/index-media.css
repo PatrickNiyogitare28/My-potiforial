@@ -67,7 +67,7 @@
     width: 100%;
     border-radius: 10px;
     border-width: 0px;
-    color : #ffff;
+    color : white;
     padding: 15px;
     background: #ED994B;
     font-size: 01em;
@@ -91,7 +91,7 @@
     
 }
 .mobile-sidebar ul li a{
-    color: #ffff;
+    color: white;
     font-family: 'Century Gothic';
     text-decoration: none;
     padding-left: 20px;
@@ -214,7 +214,7 @@
         width: 50%;
         border-radius: 10px;
         border-width: 0px;
-        color : #ffff;
+        color : white;
         padding: 15px;
         background: #ED994B;
         font-size: 01em;
@@ -238,7 +238,7 @@
         
     }
     .mobile-sidebar ul li a{
-        color: #ffff;
+        color: white;
         font-family: 'Century Gothic';
         text-decoration: none;
         padding-left: 20px;
