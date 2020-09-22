@@ -32,20 +32,20 @@ nav ul li{
   padding: 10px;
   font-size: 1.2em;
   list-style-type: none;
-  color: #ffff;
+  color: white;
 }
 nav ul li:hover{
     color: rgb(240, 239, 239);
 }
 nav ul li a{
     text-decoration: none;
-    color: #ffff;
+    color: white;
 }
 nav ul li a:hover{
     color: rgb(240, 239, 239);
 }
 nav ul li button{
-    background: #ffff;
+    background: white;
     color: #ED994B;
     border-radius: 20px 20px;
     border-width: 0px;
@@ -66,7 +66,7 @@ nav ul li button:hover{
     cursor: pointer;
 }
 nav ul li:nth-child(4){
-    border-bottom: 5px solid #ffff;
+    border-bottom: 5px solid white;
     margin-bottom: 5px;
   
 }

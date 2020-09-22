@@ -30,20 +30,20 @@ nav ul li{
   padding: 10px;
   font-size: 1.2em;
   list-style-type: none;
-  color: #ffff;
+  color: white;
 }
 nav ul li:hover{
     color: rgb(240, 239, 239);
 }
 nav ul li a{
     text-decoration: none;
-    color: #ffff;
+    color:white;
 }
 nav ul li a:hover{
     color: rgb(240, 239, 239);
 }
 nav ul li button{
-    background: #ffff;
+    background: white;
     color: #ED994B;
     border-radius: 20px 20px;
     border-width: 0px;
@@ -60,7 +60,7 @@ nav ul li button:hover{
     cursor: pointer;
 }
 nav ul li:nth-child(3){
-    border-bottom: 5px solid #ffff;
+    border-bottom: 5px solid white;
     margin-bottom: 5px;
   
 }
@@ -102,8 +102,8 @@ main{
   padding: 3em;
 }
 .queries-wrapper h2{
-    color: #ffff;
-    border-bottom: 1px solid #ffff;
+    color: white;
+    border-bottom: 1px solid white;
 }
 .contact-form{
     width: 100%;
@@ -119,22 +119,22 @@ main{
     width: 40%;
     padding: 18px; 
     background-color: #494545;
-    color: #ffff !important;
+    color: white !important;
     font-size: 0.9em;
     font-family: 'Century Gothic';
 }
 .input-wrapper input::placeholder{
-    color: #ffff !important;
+    color: white !important;
 }
 .input-wrapper textarea::placeholder{
-    color: #ffff !important;
+    color: white !important;
 }
 .contact-form textarea{
     width: 96%;
     padding: 1em;
     margin-top: 1em;
     background-color: #494545;
-    color: #ffff !important;
+    color: white !important;
     font-size: 0.9em;
     font-family: 'Century Gothic';
 }
@@ -158,20 +158,20 @@ main{
     width: 100%;
     margin-top: 2em;
     display: flex;
-    border-top: 1px solid #ffff;
+    border-top: 1px solid white;
 }
 .subscribe-form input{
     margin-top: 1em;
     width: 60%;
     padding: 15px;
     background-color: #494545;
-    color: #ffff !important;
+    color: white !important;
     font-size: 0.9em;
     font-family: 'Century Gothic';
 
 }
 .subscribe-form input::placeholder {
-    color: #ffff;
+    color: white;
 }
 .subscribe-form button{
     margin-top: 1em;
@@ -184,7 +184,7 @@ main{
     cursor: pointer;
 }
 .social-section{
-    color: #ffff;
+    color: white;
     font-size: 1em;
     padding: 5px;
     width: 80%;
@@ -225,7 +225,7 @@ main{
 }
 .footer-content-wrapper p{
     font-size: 13px;
-    color: #ffff;
+    color: white;
 }
 .font-aswesome-color-white:hover{
     color: #ED994B;
