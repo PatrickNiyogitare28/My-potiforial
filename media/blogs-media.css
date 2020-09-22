@@ -69,7 +69,7 @@
     
    }
    .mobile-sidebar ul li a{
-    color: #ffff;
+    color: white;
     font-family: 'Century Gothic';
     text-decoration: none;
     padding-left: 20px;
@@ -101,7 +101,7 @@
     display: block;
     width: 30px;
     height: 5px;
-    background: #fff;
+    background: white;
     margin: 3px 0px;
    
    }
@@ -124,7 +124,7 @@
    background: #c9803b;
    }
    .join-me-btn{
-        background: #ffff;
+        background: white;
         color: #ED994B;
         border-radius: 20px 20px;
         border-width: 0px;
@@ -216,7 +216,7 @@ and (-webkit-min-device-pixel-ratio: 2){
       
      }
      .mobile-sidebar ul li a{
-      color: #ffff;
+      color: white;
       font-family: 'Century Gothic';
       text-decoration: none;
       padding-left: 20px;
@@ -248,7 +248,7 @@ and (-webkit-min-device-pixel-ratio: 2){
       display: block;
       width: 30px;
       height: 5px;
-      background: #fff;
+      background: white;
       margin: 3px 0px;
      
      }
@@ -271,7 +271,7 @@ and (-webkit-min-device-pixel-ratio: 2){
      background: #c9803b;
      }
      .join-me-btn{
-          background: #ffff;
+          background: white;
           color: #ED994B;
           border-radius: 20px 20px;
           border-width: 0px;
