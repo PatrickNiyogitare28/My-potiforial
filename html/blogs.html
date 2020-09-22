@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patrick Bland | Blogs</title>
     <link rel="stylesheet" href="../css/blogs.css">
+    <link rel="stylesheet" href="../media/blogs-media.css">
     <link rel="stylesheet" href="../font-awesome-v4/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@700&display=swap" rel="stylesheet">
-   
+    <script src="../scripts/scripts.js"></script>
 </head>
 <body>
     <header>
@@ -21,7 +22,23 @@
         </ul>
         </nav>
     </header>
-    <main>
+    <div class="mobile-sidebar" id="sidebar">
+        <ul>
+        <li class="cursor-pointer"><a href="../index.html">Home</a></li>
+        <li class="cursor-pointer"><a href="./about.html">About</a></li> 
+        <li class="cursor-pointer"><a href="./contact.html">Contact</a></li>
+        <li class="cursor-pointer active-router"><a href="./blogs.html">Blogs</a> </li>
+        <li><a href="./singin.html"><button class="join-me-btn">Join me</button></a> </li>
+      </ul>
+ </div>
+    <main class="main-container" id="main-container">
+        <div class="mobile-toggle-header">
+            <div class="toggle-btn" onclick="toggleSidebar()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+           </div> 
         <div class="blogs-container">
             <div class="blog-story-wrapper">
                 <h2>Will ReactJS Continue To Dominate In 2021?</h2>

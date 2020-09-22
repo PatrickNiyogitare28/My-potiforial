@@ -1,0 +1,285 @@
+
+@media only screen and (max-width: 600px){
+  header{
+      display: none;
+  }
+  main{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    padding: 0;
+  }
+  .blogs-container{
+      width: 90%;
+     display: flex;
+      flex-direction: column;
+      padding: 1em;
+      
+  }
+  .blog-story-wrapper{
+      width: 85%;
+  }
+  .other-blogs-wrapper{
+      margin-top: 2em;
+      width: 100%;
+     
+  }
+  .blog-item{
+      width: 90%;
+  }
+  footer{
+      width: 100%;
+     display: flex;
+      justify-content: space-between;
+      padding: 0;
+
+  }
+  .copyright{
+     width: 50%;
+     padding: 2em;
+     margin: 0;
+  }
+  .social-media{
+      width: 40%;
+      padding: 15px;
+  }
+  
+
+/* ------------------------SIDE BAR DESIGN-------------------------- */
+.mobile-sidebar{
+    display: block;
+}
+.mobile-toggle-header{
+    display: block;
+}
+
+ 
+#sidebar{
+    width: 200px;
+    height: 100%;
+    background: #ED994B;
+    position: fixed;
+    left: -200px;
+    transition: all 500ms linear;
+   
+   
+   }
+   .mobile-sidebar ul{
+    margin-top: 4em;
+    
+   }
+   .mobile-sidebar ul li a{
+    color: #ffff;
+    font-family: 'Century Gothic';
+    text-decoration: none;
+    padding-left: 20px;
+   }
+   #sidebar.active{
+   left: 0px; 
+   float: left;
+   width: 80%;
+   
+   }
+   #main-container.full{
+    width:100%;
+   
+   }
+   #sidebar ul li{
+    color: rgba(230,230,230,0.9);
+    list-style: none;
+    padding: 15px 10px;
+    border-bottom: 1px solid rgba(100,100,100,0.3);
+   }
+   .toggle-btn{
+    /* position: absolute;
+    left: 80%;
+    top: 40px; */
+    float: right;
+   
+   }
+   .toggle-btn span{
+    display: block;
+    width: 30px;
+    height: 5px;
+    background: #fff;
+    margin: 3px 0px;
+   
+   }
+   #main-container{
+    clear:both;
+    width: 100%;
+    height: 100%;
+    transition: all 500ms linear;
+   }
+   .mobile-toggle-header{
+    background: #ED994B;
+    width: 95.2%;
+    height: 40px;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+   }
+   
+   .active-router{
+   background: #c9803b;
+   }
+   .join-me-btn{
+        background: #ffff;
+        color: #ED994B;
+        border-radius: 20px 20px;
+        border-width: 0px;
+        padding: 10px;
+        width: 100px;
+        cursor: pointer;
+        font-family: 'Century Gothic';
+   
+   }
+}
+
+/* -------------------------------------TABLET -------------------------------- */
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px)
+and (orientation: portrait)
+and (-webkit-min-device-pixel-ratio: 2){
+    header{
+        display: none;
+    }
+    main{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+      padding: 0;
+    }
+    .blogs-container{
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1em;
+     
+    }
+    .blog-story-wrapper{
+        width: 80%;
+    }
+    .other-blogs-wrapper{
+        margin-top: 2em;
+        width: 90%;
+        display: grid;
+        grid-template-columns: auto auto;
+        /* justify-content: space-between; */
+       
+    }
+    .blog-item{
+        width: 85%;
+        margin-top: 2em;
+    }
+    footer{
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        padding: 0;
+      
+    }
+    .copyright{
+       width: 50%;
+       padding-left: 4em;
+       margin: 0;
+    }
+    .social-media{
+        width: 20%;
+        padding: 15px;
+    }
+    
+  
+  /* ------------------------SIDE BAR DESIGN-------------------------- */
+  .mobile-sidebar{
+      display: block;
+  }
+  .mobile-toggle-header{
+      display: block;
+  }
+  
+   
+  #sidebar{
+      width: 200px;
+      height: 100%;
+      background: #ED994B;
+      position: fixed;
+      left: -200px;
+      transition: all 500ms linear;
+     
+     
+     }
+     .mobile-sidebar ul{
+      margin-top: 4em;
+      
+     }
+     .mobile-sidebar ul li a{
+      color: #ffff;
+      font-family: 'Century Gothic';
+      text-decoration: none;
+      padding-left: 20px;
+     }
+     #sidebar.active{
+     left: 0px; 
+     float: left;
+     width: 80%;
+     
+     }
+     #main-container.full{
+      width:100%;
+     
+     }
+     #sidebar ul li{
+      color: rgba(230,230,230,0.9);
+      list-style: none;
+      padding: 15px 10px;
+      border-bottom: 1px solid rgba(100,100,100,0.3);
+     }
+     .toggle-btn{
+      /* position: absolute;
+      left: 80%;
+      top: 40px; */
+      float: right;
+     
+     }
+     .toggle-btn span{
+      display: block;
+      width: 30px;
+      height: 5px;
+      background: #fff;
+      margin: 3px 0px;
+     
+     }
+     #main-container{
+      clear:both;
+      width: 100%;
+      height: 100%;
+      transition: all 500ms linear;
+     }
+     .mobile-toggle-header{
+      background: #ED994B;
+      width: 98%;
+      height: 40px;
+      padding: 10px;
+      position: sticky;
+      top: 0;
+     }
+     
+     .active-router{
+     background: #c9803b;
+     }
+     .join-me-btn{
+          background: #ffff;
+          color: #ED994B;
+          border-radius: 20px 20px;
+          border-width: 0px;
+          padding: 10px;
+          width: 100px;
+          cursor: pointer;
+          font-family: 'Century Gothic';
+     
+     }
+  }
+  
