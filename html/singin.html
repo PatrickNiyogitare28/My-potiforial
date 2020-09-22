@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patrick Bland | Signin</title>
     <link rel="stylesheet" href="../css/singin.css">
+    <link rel="stylesheet" href="../media/signin-media.css">
+    <script src="../scripts/scripts.js"></script>
 </head>
 <body>
     <header>
@@ -18,7 +20,23 @@
         </ul>
         </nav>
     </header>
-    <main>
+    <div class="mobile-sidebar" id="sidebar">
+        <ul>
+        <li class="cursor-pointer"><a href="../index.html">Home</a></li>
+        <li class="cursor-pointer"><a href="./about.html">About</a></li> 
+        <li class="cursor-pointer"><a href="./contact.html">Contact</a></li>
+        <li class="cursor-pointer"><a href="./blogs.html">Blogs</a> </li>
+        <li><a href="./signup.html"><button class="join-me-btn">Sing up</button></a> </li>
+      </ul>
+ </div>
+    <main class="main-container" id="main-container">
+        <div class="mobile-toggle-header">
+            <div class="toggle-btn" onclick="toggleSidebar()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+           </div> 
         <div class="signin-container">
             <div class="left-form-wrapper">
                 <div class="highright-text-wrapper">
