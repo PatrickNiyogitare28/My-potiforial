@@ -73,7 +73,7 @@ main{
 }
 .signin-container{
      margin-top: 3.5em;
-    width: 70%; 
+     width: 70%; 
    
 }
 .left-form-wrapper{
@@ -133,7 +133,7 @@ main{
     padding-top: 2em;
 }
 .highright-text-wrapper{
-  margin-top: 30%;
+    margin-top: 30%;
     text-align: center;
 }
 .highright-text-wrapper h1{
@@ -159,4 +159,10 @@ main{
 .highright-text-wrapper button:hover{
     color: #ffff;
     background-color: #ED994B;
+}
+.mobile-sidebar{
+    display: none;
+}
+.mobile-toggle-header{
+    display: none;
 }
