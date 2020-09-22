@@ -1,0 +1,402 @@
+
+@media only screen and (max-width: 600px){
+    header{
+        display: none;
+        padding: 0;
+        margin: 0;
+    }
+    body{
+    width: 95%;
+    }
+    main{
+        width: 100%;
+       padding: 0;
+        margin: 0;
+        height: 500px;
+    }
+    .main-container{
+        width: 100%;
+        float: none;
+        position: relative;
+        height: 500px;
+        padding: 10px;
+    }
+    .main-short-background{
+        width: 70%;
+        padding: 25px;
+    }
+    .contact-content-wrapper{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+    .queries-wrapper{
+       width: 100%;
+    }
+    .queries-wrapper form{
+        width: 100%;
+       
+    }
+    .input-wrapper{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+       
+    }
+    .input-wrapper input{
+        margin-top: 1em;
+        width: 83%;
+     }
+    .queries-wrapper form textarea{
+       width: 86%;
+    }
+    .queries-wrapper form button{
+        width: 100%;
+        margin-top: 1.2em;
+        float: none;
+    }
+    .subscribe-form{
+        display: flex;
+        flex-direction: column;
+    }
+    .subscribe-form input{
+        width: 86%;
+    }
+    .subscribe-form button{
+        height: 45px;
+    }
+    .social-medial-wrapper{
+        padding: 0;
+        width: 100%;
+    }
+    .social-section{
+        width: 90%;
+    }
+    .social-section p{
+        width: 100%;
+    }
+    .social-section .email-address{
+        font-size: 12px;
+    }
+    .footer{
+        display: none;
+    }
+    .mobile-footer{
+        display: block;
+        width: 100%;
+        padding: 0;
+    }
+    .footer-content-wrapper{
+        width: 100%;
+        padding: 0;
+      float: none;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 2em;
+    }
+    .social-medai-links{
+        width: 40%;
+        padding: 0;
+        float: none;
+        margin: 0;
+        float: right;
+    }
+    .mobile-sidebar{
+        display: block;
+    }
+    .mobile-toggle-header{
+        display: block;
+    }
+     /* ------------------------SIDE BAR DESIGN-------------------------- */
+    
+    
+   #sidebar{
+    width: 200px;
+    height: 100%;
+    background: #ED994B;
+    position: fixed;
+    left: -200px;
+    transition: all 500ms linear;
+ 
+
+}
+.mobile-sidebar ul{
+    margin-top: 4em;
+    
+}
+.mobile-sidebar ul li a{
+    color: #ffff;
+    font-family: 'Century Gothic';
+    text-decoration: none;
+    padding-left: 20px;
+}
+#sidebar.active{
+   left: 0px; 
+   float: left;
+   width: 80%;
+
+}
+#main-container.full{
+    width:100%;
+   
+}
+#sidebar ul li{
+    color: rgba(230,230,230,0.9);
+    list-style: none;
+    padding: 15px 10px;
+    border-bottom: 1px solid rgba(100,100,100,0.3);
+}
+.toggle-btn{
+    /* position: absolute;
+    left: 80%;
+    top: 40px; */
+    float: right;
+
+}
+.toggle-btn span{
+    display: block;
+    width: 30px;
+    height: 5px;
+    background: #fff;
+    margin: 3px 0px;
+
+}
+#main-container{
+    clear:both;
+    width: 100%;
+   height: 100%;
+    transition: all 500ms linear;
+}
+.mobile-toggle-header{
+    background: #ED994B;
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+}
+
+.active-router{
+   background: #c9803b;
+}
+.join-me-btn{
+        background: #ffff;
+        color: #ED994B;
+        border-radius: 20px 20px;
+        border-width: 0px;
+        padding: 10px;
+        width: 100px;
+        cursor: pointer;
+        font-family: 'Century Gothic';
+   
+}
+/* ------------------------SIDE BAR DESIGN-------------------------- */
+}
+
+/* -------------------------------------TABLET -------------------------------- */
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px)
+and (orientation: portrait)
+and (-webkit-min-device-pixel-ratio: 2){
+    header{
+        display: none;
+        padding: 0;
+        margin: 0;
+    }
+    body{
+    width: 98%;
+    
+    }
+    main{
+        width: 100%;
+       padding: 0;
+        margin: 0;
+        height: 500px;
+    }
+    .main-container{
+        width: 100%;
+        float: none;
+        position: relative;
+        height: 500px;
+        padding: 10px;
+        
+        display: flex;
+    justify-content: space-around;   
+    }
+    .main-short-background{
+        width: 70%;
+        padding: 25px;
+        
+    }
+    .contact-content-wrapper{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        height: auto;
+       
+    }
+    .queries-wrapper{
+       width: 100%;
+        
+    }
+    .queries-wrapper form{
+        width: 100%;
+       
+    }
+    .input-wrapper{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+       
+    }
+    .input-wrapper input{
+        margin-top: 1em;
+        width: 95%;
+     }
+    .queries-wrapper form textarea{
+       width: 96%;
+    }
+    .queries-wrapper form button{
+        width: 100%;
+        margin-top: 1.2em;
+        float: none;
+    }
+    .subscribe-form{
+        display: flex;
+       justify-content: space-between;
+    }
+    .subscribe-form input{
+        width: 100%;
+    }
+    .subscribe-form button{
+        height: 45px;
+        width: 300px !important;
+    }
+    .social-medial-wrapper{
+        padding: 0;
+        width: 100%;
+    }
+    .social-section{
+        width: 90%;
+    }
+    .social-section p{
+        width: 100%;
+    }
+    .social-section .email-address{
+        font-size: 12px;
+    }
+    .footer{
+        display: none;
+    }
+    .mobile-footer{
+        display: block;
+        width: 100%;
+        padding: 0;
+    }
+    .footer-content-wrapper{
+        width: 100%;
+        padding: 0;
+      float: none;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 2em;
+    }
+    .social-medai-links{
+        width: 40%;
+        padding: 0;
+        float: none;
+        margin: 0;
+        float: right;
+    }
+    .mobile-sidebar{
+        display: block;
+    }
+    .mobile-toggle-header{
+        display: block;
+    }
+     /* ------------------------SIDE BAR DESIGN-------------------------- */
+    
+    
+   #sidebar{
+    width: 200px;
+    height: 100%;
+    background: #ED994B;
+    position: fixed;
+    left: -200px;
+    transition: all 500ms linear;
+ 
+
+}
+.mobile-sidebar ul{
+    margin-top: 4em;
+    
+}
+.mobile-sidebar ul li a{
+    color: #ffff;
+    font-family: 'Century Gothic';
+    text-decoration: none;
+    padding-left: 20px;
+}
+#sidebar.active{
+   left: 0px; 
+   float: left;
+   width: 80%;
+
+}
+#main-container.full{
+    width:100%;
+   
+}
+#sidebar ul li{
+    color: rgba(230,230,230,0.9);
+    list-style: none;
+    padding: 15px 10px;
+    border-bottom: 1px solid rgba(100,100,100,0.3);
+}
+.toggle-btn{
+    /* position: absolute;
+    left: 80%;
+    top: 40px; */
+    float: right;
+
+}
+.toggle-btn span{
+    display: block;
+    width: 30px;
+    height: 5px;
+    background: #fff;
+    margin: 3px 0px;
+
+}
+#main-container{
+    clear:both;
+    width: 100%;
+   height: 100%;
+    transition: all 500ms linear;
+}
+.mobile-toggle-header{
+    background: #ED994B;
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+}
+
+.active-router{
+   background: #c9803b;
+}
+.join-me-btn{
+        background: #ffff;
+        color: #ED994B;
+        border-radius: 20px 20px;
+        border-width: 0px;
+        padding: 10px;
+        width: 100px;
+        cursor: pointer;
+        font-family: 'Century Gothic';
+   
+}
+}
