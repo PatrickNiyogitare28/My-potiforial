@@ -134,6 +134,10 @@
 }
 /* ------------------------SIDE BAR DESIGN-------------------------- */
 
+.page-footer-boxes img{
+    width: 30px;
+    height: 30px;
+}
 
   }
 
@@ -302,4 +306,144 @@
        
     }
 }
-  
+
+@media screen and (orientation: landscape) 
+  and  (max-width: 1281px){
+    *{
+        margin: 0;
+        padding: 0;
+        
+    }
+    body{
+     width: 100% !important;
+     height: 1024px !important;
+     /* background-size: 1024px; */
+    } 
+   
+    .page-container{
+        width: 100%;
+    
+    }
+    .main-container{
+        width: 100%;
+    }
+   .mobile-sidebar{
+       display: block;
+
+   }
+   nav{
+       display: none;
+   }
+   /* .profile-img-wrapper{
+       width:  100%;
+      
+   }
+   .profile-img-wrapper img{
+       width: 250px;
+       height: 250px;
+       
+   }
+   .hightright-text-wrapper{
+       width: 90%;
+     
+   }
+   .hightright-text-wrapper h1{
+       font-size: 3em;
+   }
+   .hightright-text-wrapper h3{
+       font-size: 1em;
+   }
+   .highright-border-btm{
+    width: 40%;
+    height: 10px;
+    border-radius: 20px 20px;
+    background: #ED994B;
+    margin-top: 10px;
+} */
+.hightright-text-wrapper{
+   width: 100%;
+}
+.hightrigt-wrapper{
+    margin-top: 5em !important;
+}
+.hightright-text-wrapper h1{
+    display: inline;
+    font-size: 5em;
+}
+.read-btn-wrapper{
+    width: 100%;
+    margin-top:2em;
+}
+.read-btn-wrapper button{
+    width: 50%;
+    border-radius: 10px;
+    border-width: 0px;
+    color : white;
+    padding: 15px;
+    background: #ED994B;
+    font-size: 01em;
+}
+   
+/* ------------------------SIDE BAR DESIGN-------------------------- */
+
+
+#sidebar{
+    width: 200px;
+    height: 100%;
+    background: #363535;
+    position: fixed;
+    left: -200px;
+    transition: all 500ms linear;
+ 
+
+}
+.mobile-sidebar ul{
+    margin-top: 4em;
+    
+}
+.mobile-sidebar ul li a{
+    color: white;
+    font-family: 'Century Gothic';
+    text-decoration: none;
+    padding-left: 20px;
+}
+#sidebar.active{
+   left: 0px; 
+   float: left;
+   width: 80%;
+
+}
+#main-container.full{
+    width:100%;
+   
+}
+#sidebar ul li{
+    color: rgba(230,230,230,0.9);
+    list-style: none;
+    padding: 15px 10px;
+    border-bottom: 1px solid rgba(100,100,100,0.3);
+}
+.toggle-btn{
+    position: absolute;
+    left: 80%;
+    top: 40px;
+
+}
+.toggle-btn span{
+    display: block;
+    width: 30px;
+    height: 5px;
+    background: #ED994B;
+    margin: 3px 0px;
+
+}
+#main-container{
+    clear:both;
+    width: 90%;
+   height: 100%;
+    transition: all 500ms linear;
+}
+/* ------------------------SIDE BAR DESIGN-------------------------- */
+
+
+  }

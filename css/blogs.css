@@ -9,7 +9,7 @@ body{
 }
 header{
     width: 100%;
-    height: 50px;
+    height: 45px;
     background: #ED994B;
     align-content: center;
     position: sticky;
@@ -30,27 +30,28 @@ nav ul{
 nav ul li{
   align-content: center;
   padding: 10px;
-  font-size: 1.2em;
+  font-size: 1em;
   list-style-type: none;
-  color:whitef;
+  color:white;
 }
 nav ul li:hover{
     color: rgb(240, 239, 239);
 }
 nav ul li a{
     text-decoration: none;
-    color:whitef;
+    color:white;
 }
 nav ul li a:hover{
     color: rgb(240, 239, 239);
 }
 nav ul li button{
-    background:whitef;
+    background:white;
     color: #ED994B;
     border-radius: 20px 20px;
     border-width: 0px;
     padding: 10px;
     width: 100px;
+    margin-top: -0.2em;
     cursor: pointer;
     font-family: 'Century Gothic';
 }
@@ -66,7 +67,7 @@ nav ul li button:hover{
     cursor: pointer;
 }
 nav ul li:nth-child(4){
-    border-bottom: 5px solidwhitef;
+    border-bottom: 5px solid white;
     margin-bottom: 5px;
   
 }
