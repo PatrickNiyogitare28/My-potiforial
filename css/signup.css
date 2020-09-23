@@ -160,3 +160,9 @@ main{
     color: white;
     background-color: #ED994B;
 }
+.mobile-sidebar{
+    display: none;
+}
+.mobile-toggle-header{
+    display: none;
+}
