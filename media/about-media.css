@@ -410,3 +410,197 @@ background: #c9803b;
      
  }
    } */
+
+   @media screen and (orientation: landscape)
+   and  (max-width: 1281px)
+   /* and (max-device-width: 600px) 
+   and (max-device-width: 480px) */
+    {
+
+      /* Your CSS Here*/
+      .mobile-sidebar{
+        display: block;
+    }
+    .mobile-toggle-headere{
+        display: block;
+    }
+       *{
+           padding: 0;
+           margin: 0;
+           box-sizing: border-box;
+       }
+       body{
+         width: 100%;  
+           padding: 0;
+           margin: 0;
+       }
+    header{
+        display: none;
+        padding: 0;
+           margin: 0;
+    }
+   
+    .main-container{
+      width: 100%;
+        
+    }
+    main{
+       width: 100%; 
+        padding: 0;
+           margin: 0;
+    }
+    
+    .about-primary-description-container{
+        width: 90%; 
+        height: 210px;
+        padding: 0px; 
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        margin: 0;
+        
+        
+    }
+    .description-text-wrapper{
+       width: 100%;
+    }
+    .border-top{
+        width: 20%;
+    }
+    .skill-wrapper{
+        display: flex;
+       flex-direction: column;
+        padding: 20px; 
+    }
+  .skills-highright{
+    
+     width: 100%;
+
+
+  }
+  .skills-highright p{
+      margin-top: -0.5em;
+  }
+  .tools-wrapper{
+    margin-top: 1em;
+     width: 100%;
+  }
+  .tool-item{
+      display: flex;
+      flex-direction: column;
+  }
+   .other-skills-wrapper{
+       width: 100%;
+       margin-left: 0;
+       margin-top: 1em; 
+   }
+   .blanding{
+       width: 100%;
+       display: flex;
+       justify-content: space-between;
+      
+   }
+   .number{
+       margin-left: 20%;
+   }
+   .blanding-item{
+       margin-left: 0;
+       margin-top:2em;
+   }
+   footer{
+       width: 100%;
+       display: flex;
+       justify-content: space-between;
+   }
+   .copyright{
+     margin-left: 0;
+     width: 70%;
+     padding: 0;
+   }
+   .social-media{
+      width: 40%;
+   }
+   /* ------------------------SIDE BAR DESIGN-------------------------- */
+    
+    
+   #sidebar{
+    width: 200px;
+    height: 100%;
+    background: #ED994B;
+    position: fixed;
+    left: -200px;
+    transition: all 500ms linear;
+ 
+
+}
+.mobile-sidebar ul{
+    margin-top: 4em;
+    
+}
+.mobile-sidebar ul li a{
+    color: white;
+    font-family: 'Century Gothic';
+    text-decoration: none;
+    padding-left: 20px;
+}
+#sidebar.active{
+   left: 0px; 
+   float: left;
+   width: 80%;
+
+}
+#main-container.full{
+    width:100%;
+   
+}
+#sidebar ul li{
+    color: rgba(230,230,230,0.9);
+    list-style: none;
+    padding: 15px 10px;
+    border-bottom: 1px solid rgba(100,100,100,0.3);
+}
+.toggle-btn{
+    /* position: absolute;
+    left: 80%;
+    top: 40px; */
+    float: right;
+
+}
+.toggle-btn span{
+    display: block;
+    width: 30px;
+    height: 5px;
+    background: white;
+    margin: 3px 0px;
+
+}
+#main-container{
+    clear:both;
+    width: 100%;
+   height: 100%;
+    transition: all 500ms linear;
+}
+.mobile-toggle-headere{
+    background: #ED994B;
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+}
+
+.active-router{
+   background: #c9803b;
+}
+.join-me-btn{
+        background: white;
+        color: #ED994B;
+        border-radius: 20px 20px;
+        border-width: 0px;
+        padding: 10px;
+        width: 100px;
+        cursor: pointer;
+        font-family: 'Century Gothic';
+   
+}   
+   } 
