@@ -1,0 +1,144 @@
+:focus{
+  outline: none;
+}
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+  background-color: #fefefe;
+   margin-left: 25%;
+  margin-top:5%;
+  padding: 20px;
+  width: 40%; 
+  border-radius: 20px 20px;
+  border-width: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.create-blog-modal-content{
+   background-color: #fefefe;
+   margin-left: 25%;
+   margin-top:2%;
+   padding: 20px;
+   width: 50%; 
+   border-radius: 20px 20px;
+   border-width: 0px;
+}
+.userUpdate-form-wrapper{
+    width: 90%;
+}
+
+.close {
+  color: #aaa;
+  margin-left: 90%;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.modal-footer-btn-wrapper{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.input-wrapper button{
+    margin-top: 3em;
+    width: 40% !important;
+    background: #ED994B;
+    border-radius: 10px 10px;
+    border-width: 0px;
+    color: white;
+    padding: 10px;
+   
+}
+.input-wrapper button:hover{
+    cursor: pointer;
+    background-color: #cc8849;
+}
+.close-account-btn{
+    background-color: rgba(211, 43, 43, 0.664) !important;
+}
+.close-account-btn:hover{
+    background: rgb(177, 35, 35) !important;
+}
+.new-blog-container{
+  width: 100%;
+ 
+}
+
+.new-blog-container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+ align-items: center;
+}
+.form-wrapper{
+  width: 90%;
+ 
+}
+.new-blog-container form{
+  width: 95%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  
+}
+.new-blog-container label{
+  font-family: 'Century Gothic';
+  color: #363535;
+  display: block;
+  margin-top: 1em;
+}
+.description-label{
+  margin-top: 2em !important;
+ 
+}
+.new-blog-container input,textarea{
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ED994B;
+  border-radius: 10px 10px;
+  width: 90%; 
+}
+.add-image{
+  width: 93%;
+  background: rgba(46, 142, 180, 0.678);
+  color: white;
+  border-radius: 10px 10px;
+  padding: 10px;
+  font-size: 1em;
+  cursor: pointer;
+}
+.add-image:hover{
+  background: rgb(46, 142, 180);
+ 
+}
+.create-blog-btn{
+  width: 50%;
+  margin-top: 2em;
+  font-size: 1em;
+  padding: 10px;
+  background: #ED994B;
+  color: white;
+  cursor: pointer;
+}
+.create-blog-btn:hover{
+  background: #cc8849;
+}
