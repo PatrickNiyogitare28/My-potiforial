@@ -90,3 +90,25 @@ function triggerBlogModal(event){
   })
   
 }
+function triggerEditBlogModal(event){
+  $(()=>{
+    if(event == 'open'){
+      $('#editBlogModal').fadeIn();
+    }  
+    else if(event == 'close'){
+      $('#editBlogModal').fadeOut();
+    }
+  })
+  
+}
+
+function triggerReadCommentsModal(event){
+  $(()=>{
+    if(event == 'open'){
+      $('#readCommentsModal').fadeIn();
+    }  
+    else if(event == 'close'){
+      $('#readCommentsModal').fadeOut();
+    }
+  })
+}
