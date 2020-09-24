@@ -254,9 +254,9 @@ display: flex;
     border-radius: 10px 10px;
     border: 1px solid #ED994B;
 }
-.input-wrapper button{
+.input-wrapper .save-profile-btn{
     margin-top: 3em;
-    width: 100%;
+    width: 100% !important;
     background: #ED994B;
     border-radius: 10px 10px;
     border-width: 0px;
