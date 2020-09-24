@@ -1,0 +1,68 @@
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+  background-color: #fefefe;
+ margin-left: 25%;
+  margin-top:8%;
+  padding: 20px;
+  width: 40%; 
+  border-radius: 20px 20px;
+  border-width: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.userUpdate-form-wrapper{
+    width: 90%;
+}
+
+.close {
+  color: #aaa;
+  margin-left: 90%;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.modal-footer-btn-wrapper{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.input-wrapper button{
+    margin-top: 3em;
+    width: 40% !important;
+    background: #ED994B;
+    border-radius: 10px 10px;
+    border-width: 0px;
+    color: white;
+    padding: 10px;
+   
+}
+.input-wrapper button:hover{
+    cursor: pointer;
+    background-color: #cc8849;
+}
+.close-account-btn{
+    background-color: rgba(211, 43, 43, 0.664) !important;
+}
+.close-account-btn:hover{
+    background: rgb(177, 35, 35) !important;
+}
