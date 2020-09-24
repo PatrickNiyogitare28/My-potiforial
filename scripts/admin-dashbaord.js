@@ -16,6 +16,19 @@ $(()=>{
         showWrapper('users-container')
         markActiveRouter('users-router');
     })
+  
+    $('#blogs-router').click(()=>{
+      hideWrappers();
+      showWrapper('blogs-container')
+      markActiveRouter('blogs-router');
+  })
+
+  $('#logs-router').click(()=>{
+    hideWrappers();
+    showWrapper('logs-container')
+    markActiveRouter('logs-router');
+    // showWrapper('chartContainer')
+})
 
    
 })
@@ -25,6 +38,8 @@ function hideWrappers(){
         anyClass.addClass('hide-page')
     var hasActive = $('#navigation').find('.active-router');
         hasActive.removeClass('active-router');  
+
+        // $('#chartContainer').addClass('hide-page');
   })  
 }
 function showWrapper(wrapperId){
