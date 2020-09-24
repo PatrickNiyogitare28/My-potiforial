@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patrick Bland | Admin-dashboard</title>
     <link rel="stylesheet" href="../css/admin-dashboard.css">
-    <link rel="stylesheet" href="../css/update-user-modal-box.css">
+    <link rel="stylesheet" href="../css/modal-box.css">
     <script src="../scripts/jquery-3.5.1.min.js"></script>
     <script src="../scripts/admin-dashbaord.js"></script>
     <link rel="stylesheet" href="../font-awesome-v4/css/font-awesome.min.css">
@@ -80,8 +80,8 @@
             <div class="profile-main">
                 <div class="profile-image-wrapper">
                     <img src="../assetes/pc-img.png" alt="profile image">
-                    <input type="file" hidden id="file-input" accept=""> 
-                    <button onclick="triggerFileInput()">Change profile Image</button>
+                    <input type="file" hidden id="new-profile-image" accept=""> 
+                    <button onclick="triggerFileInput('new-profile-image')">Change profile Image</button>
                 </div>
                 <div class="profile-details-wrapper">
                  <form action="">
@@ -180,7 +180,8 @@
         <div class="blogs-container subpage hide-page" id="blogs-container">
             <div class="users-main-container">
                 <div class="add-user">
-                    <i class="fa fa-plus-circle" aria-hidden="true" title="Create a New blog"></i>
+                    <i class="fa fa-plus-circle" aria-hidden="true" 
+                    onclick="triggerBlogModal('open')" title="Create a New blog"></i>
                 </div>
 
                 <table>
@@ -264,9 +265,7 @@
 
 <!-- ----------------------------update user modal---------------------------------- -->
 <div id="myModal" class="modal">
-
-    <!-- Modal content -->
-    <div class="modal-content">
+<div class="modal-content">
       <span class="close">&times;</span>
        <div class="userUpdate-form-wrapper">
         <form action="">
@@ -291,5 +290,28 @@
             </form>
        </div>
     </div>
-  
- </div>
+</div>
+<div id="createBlogModal" class="modal">
+    <div class="create-blog-modal-content">
+        <span class="close" onclick="triggerBlogModal('close')">&times;</span>
+        <div class="new-blog-container">
+            <div class="form-wrapper">
+            <form>
+            <label for="Blog Title">Blog Title</label>
+            <input type="text" name="blog-title" placeholder="Blog Title">
+   
+            <label for="Blog Body" class="description-label">Blog Description</label>
+            <textarea name="" id="" cols="30" rows="10">Type text</textarea>
+             
+            <label for="Blog  Image">Image</label>
+            <input type="file" name="image" hidden id="add-blog-image">
+   
+            <button type="button"  class="add-image" name="image" onclick="triggerFileInput('add-blog-image')">
+                Attach an Image
+            </button>
+            <button class="create-blog-btn">Create this Blog</button>
+            </form>
+        </div>
+    </div>
+</div>
+ 

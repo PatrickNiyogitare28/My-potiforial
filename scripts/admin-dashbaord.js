@@ -58,8 +58,8 @@ function onNavigate(routerId){
  document.getElementById(`${routerId}`).click();
 }
 
-function triggerFileInput(){
-  document.getElementById('file-input').click();
+function triggerFileInput(fieldId){
+  document.getElementById(`${fieldId}`).click();
 }
 
 
@@ -78,4 +78,15 @@ function triggerUpdateUserModal(){
     }
   })  
  
+}
+function triggerBlogModal(event){
+  $(()=>{
+    if(event == 'open'){
+      $('#createBlogModal').fadeIn();
+    }  
+    else if(event == 'close'){
+      $('#createBlogModal').fadeOut();
+    }
+  })
+  
 }
