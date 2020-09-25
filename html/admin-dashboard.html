@@ -31,7 +31,7 @@
                         <i class="fa fa-pencil-square-o nav-icon" aria-hidden="true"></i>Blogs</li>
                     <li id="logs-router" class="">
                         <i class="fa fa-sign-in nav-icon" aria-hidden="true"></i>Logs</li>
-                    <li id="notifiactions-router" class="">
+                    <li id="notifications-router" class="">
                         <i class="fa fa-bell nav-icon" aria-hidden="true"></i>Notifications</li>
                 </ul>
             </div>
@@ -273,19 +273,49 @@
                         </div>
 
                     </div>
-                    <!-- <div class="logs-container subpage hide-page" id="logs-container"> -->
-                    <!-- <div class="logs-main-container"> -->
-                    <!-- <div id="chartContainer" class="hide-page"></div> -->
-                    <!-- <script
-                    src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script> -->
-                    <!-- <script
-                    src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script> -->
-                    <!-- </div> -->
-                    <!-- </div> -->
+                   
                     <div class="logs-container subpage hide-page" id="logs-container">
                         <div class="logs-main-container">
                             <div id="chartContainer"></div>
                             <div id="failedChartContainer"></div>
+                        </div>
+                    </div>
+
+                    <div class="notifications-container subpage hide-page" id="notifications-container">
+                        <div class="notifactions-main-container">
+                            <nav>
+                                <ul>
+                                    <li><h4>Notifications</h4></li>
+                                    <li onclick="checkNotifications()">Mark All as read</li>
+                                </ul>
+                            </nav>
+                            <div class="notification-items-wrapper" id="notification-items-container">
+                                <div class="notification-item">
+                                    <p><i class="fa fa-envelope nav-icon" aria-hidden="true"></i>
+                                        <span class="note-title">News Letter subscription</span> a new user subscribed to your 
+                                    news letter <small>2 min</small></p>
+                                    <input type="checkbox" name="" id="" class="checkbox">
+                                </div>
+                                <div class="notification-item">
+                                    <p><span class="note-title"><i class="fa fa-pencil-square-o nav-icon" aria-hidden="true"></i>
+                                         A new Blog is Created</span> admin added a new blog
+                                    news letter <small>30 min</small></p>
+                                    <input type="checkbox" name="" id="" class="checkbox">
+                                </div>
+                                <div class="notification-item">
+                                    <p><i class="fa fa-comment nav-icon" aria-hidden="true"></i><span class="note-title">
+                                        Blog comment</span> 
+                                       You received one blog comment from <span>Mutesi Neddy</span><small>2 hrs</small></p>
+                                    <input type="checkbox" name="" id="" class="checkbox">
+                                </div>
+                                <div class="notification-item">
+                                    <p><i class="fa fa-user nav-icon" aria-hidden="true"></i>
+                                        <span class="note-title">
+                                        New account created</span> 
+                                        a new user Signup with <span><u>kevin89@gmail.com</u> </span><small>1 Day</small></p>
+                                    <input type="checkbox" name="" id="" class="checkbox">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

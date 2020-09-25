@@ -27,8 +27,13 @@ $(()=>{
     hideWrappers();
     showWrapper('logs-container')
     markActiveRouter('logs-router');
-    // showWrapper('chartContainer')
-})
+   })
+
+   $('#notifications-router').click(()=>{
+    hideWrappers();
+    showWrapper('notifications-container')
+    markActiveRouter('notifications-router');
+ })
 
    
 })
@@ -39,7 +44,6 @@ function hideWrappers(){
     var hasActive = $('#navigation').find('.active-router');
         hasActive.removeClass('active-router');  
 
-        // $('#chartContainer').addClass('hide-page');
   })  
 }
 function showWrapper(wrapperId){
@@ -127,4 +131,11 @@ function triggerCreateNewUserModal(event){
       $('#createNewUser').fadeOut();
     }
   }
+}
+
+function checkNotifications(){
+  $(()=>{
+   var checkbox = $('#notification-items-container').find('.checkbox');
+    checkbox.prop( "checked", true )
+  })
 }
