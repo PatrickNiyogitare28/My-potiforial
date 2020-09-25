@@ -1,211 +1,470 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patrick Bland | Admin-dashboard</title>
-    <link rel="stylesheet" href="../css/admin-dashboard.css">
-    <link rel="stylesheet" href="../css/update-user-modal-box.css">
-    <script src="../scripts/jquery-3.5.1.min.js"></script>
-    <script src="../scripts/admin-dashbaord.js"></script>
-    <link rel="stylesheet" href="../font-awesome-v4/css/font-awesome.min.css">
-</head>
-<body>
-    <main>
-        <div class="sidebar-container">
-            <div class="sidebar-header">
-                <h1>Admin</h1>
-            </div>
-            <ul class="navigation" id="navigation">
-                <li id="darshboard-router" class="active-router">
-                    <i class="fa fa-columns nav-icon" aria-hidden="true"></i>Dashboard</li>
-                <li id="profile-router" class="">
-                    <i class="fa fa-user nav-icon" aria-hidden="true"></i>Profile</li>
-                <li id="users-router" class=""><i class="fa fa-users nav-icon" aria-hidden="true"></i>
-                    Users</li>
-                <li id="blogs-router" class=""><i class="fa fa-pencil-square-o nav-icon" aria-hidden="true"></i>Blogs</li>
-                <li id="logs-router" class=""><i class="fa fa-sign-in nav-icon" aria-hidden="true"></i>Logs</li>
-                <li id="notifiactions-router" class="">
-                    <i class="fa fa-bell nav-icon" aria-hidden="true"></i>Notifications</li>
-            </ul>
-        </div>
-        <div class="main-content-container">
-            <header>
-                <nav>
-                    <ul class="font-family">
-                     <li class="cursor-pointer name">Patrick</li>
-                    <li class="cursor-pointer"><img src="../assetes/pc-img.png" alt="profile-image"></li>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Patrick Bland | Admin-dashboard</title>
+        <link rel="stylesheet" href="../css/admin-dashboard.css">
+        <link rel="stylesheet" href="../css/modal-box.css">
+        <script src="../scripts/jquery-3.5.1.min.js"></script>
+        <script src="../scripts/admin-dashbaord.js"></script>
+        <link rel="stylesheet" href="../font-awesome-v4/css/font-awesome.min.css">
+        <script src="../scripts/jquery.canvasjs.min.js"></script>
+        <script src="../scripts/logs-chart.convajs.js"></script>
+
+    </head>
+    <body>
+        <main>
+            <div class="sidebar-container">
+                <div class="sidebar-header">
+                    <h1>Admin</h1>
+                </div>
+                <ul class="navigation" id="navigation">
+                    <li id="darshboard-router" class="active-router">
+                        <i class="fa fa-columns nav-icon" aria-hidden="true"></i>Dashboard</li>
+                    <li id="profile-router" class="">
+                        <i class="fa fa-user nav-icon" aria-hidden="true"></i>Profile</li>
+                    <li id="users-router" class="">
+                        <i class="fa fa-users nav-icon" aria-hidden="true"></i>
+                        Users</li>
+                    <li id="blogs-router" class="">
+                        <i class="fa fa-pencil-square-o nav-icon" aria-hidden="true"></i>Blogs</li>
+                    <li id="logs-router" class="">
+                        <i class="fa fa-sign-in nav-icon" aria-hidden="true"></i>Logs</li>
+                    <li id="notifiactions-router" class="">
+                        <i class="fa fa-bell nav-icon" aria-hidden="true"></i>Notifications</li>
                 </ul>
-                </nav>
-            </header>
-            <div class="contents-wrapper" id="contents-wrapper">
-       <!-- --------------------------------------darsboard landing subpage---------------------------- -->
-                <div class="dashboard-container subpage" id="darshbaord-container">
-                    <div class="dashboard-main">
-                        <div class="highright">
-                               <h3>You logged In as <span>Patrick Niyogitare</span></h3>
-                               <img src="../assetes/pc-img.png" alt="profile-image">
-                        </div>
-                        <div class="control-items-container">
-                            <div class="control-item" onclick="onNavigate('profile-router')">
-                                <h4>Profile</h4>
+            </div>
+            <div class="main-content-container">
+                <header>
+                    <nav>
+                        <ul class="font-family">
+                            <li class="name" title="Logout">
+                                <a href="../index.html">
+                                    <i class="fa fa-power-off" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                            <li class="cursor-pointer name">Patrick</li>
+                            <li class="cursor-pointer"><img src="../assetes/pc-img.png" alt="profile-image"></li>
+                        </ul>
+                    </nav>
+                </header>
+                <div class="contents-wrapper" id="contents-wrapper">
+                    <!-- --------------------------------------darsboard landing
+                    subpage---------------------------- -->
+                    <div class="dashboard-container subpage" id="darshbaord-container">
+                        <div class="dashboard-main">
+                            <div class="highright">
+                                <h3>You logged In as
+                                    <span>Patrick Niyogitare</span></h3>
+                                <img src="../assetes/pc-img.png" alt="profile-image">
                             </div>
-                            <div class="control-item"  onclick="onNavigate('users-router')">
-                                <h4>Users</h4>
-                                <h3>5</h3>
+                            <div class="control-items-container">
+                                <div class="control-item" onclick="onNavigate('profile-router')">
+                                    <h4>Profile</h4>
+                                </div>
+                                <div class="control-item" onclick="onNavigate('users-router')">
+                                    <h4>Users</h4>
+                                    <h3>5</h3>
+                                </div>
+                                <div class="control-item" onclick="onNavigate('blogs-router')">
+                                    <h4>Blogs</h4>
+                                    <h3>10</h3>
+                                </div>
+                                <div class="control-item" onclick="onNavigate('logs-router')">
+                                    <h4>Logs</h4>
+                                    <h3>12</h3>
+                                </div>
+                                <div class="control-item">
+                                    <h4>Notifications</h4>
+                                    <h3>8</h3>
+                                </div>
                             </div>
-                            <div class="control-item">
-                                <h4>Blogs</h4>
-                                <h3>10</h3>
-                            </div>
-                            <div class="control-item">
-                                <h4>Logs</h4>
-                                <h3>12</h3>
-                            </div>
-                            <div class="control-item">
-                                <h4>Notifications</h4>
-                                <h3>8</h3>
-                            </div>
-                        </div>
-                    </div>
 
-                </div>
-       <!-- --------------------------------------darsboard profile subpage---------------------------- -->
-         <div class="profile-container subpage hide-page" id="profile-container">
-            <div class="profile-main">
-                <div class="profile-image-wrapper">
-                    <img src="../assetes/pc-img.png" alt="profile image">
-                    <input type="file" hidden id="file-input" accept=""> 
-                    <button onclick="triggerFileInput()">Change profile Image</button>
-                </div>
-                <div class="profile-details-wrapper">
-                 <form action="">
-                    <div class="input-wrapper">
-                        <label for="Names">Names</label>
-                        <input type="text" name="names" placeholder="Your names" value="Patrick Niyogitare">
+                        </div>
+
                     </div>
-                    <div class="input-wrapper">
-                        <label for="Email">Email</label>
-                        <input type="email" name="email" placeholder="Your email" value="patrickniyogitare28@gmail.com">
+                    <!-- --------------------------------------darsboard profile
+                    subpage---------------------------- -->
+                    <div class="profile-container subpage hide-page" id="profile-container">
+                        <div class="profile-main">
+                            <div class="profile-image-wrapper">
+                                <img src="../assetes/pc-img.png" alt="profile image">
+                                <input type="file" hidden="hidden" id="new-profile-image" accept="">
+                                <button onclick="triggerFileInput('new-profile-image')">Change profile Image</button>
+                            </div>
+                            <div class="profile-details-wrapper">
+                                <form action="">
+                                    <div class="input-wrapper">
+                                        <label for="Names">Names</label>
+                                        <input
+                                            type="text"
+                                            name="names"
+                                            placeholder="Your names"
+                                            value="Patrick Niyogitare">
+                                    </div>
+                                    <div class="input-wrapper">
+                                        <label for="Email">Email</label>
+                                        <input
+                                            type="email"
+                                            name="email"
+                                            placeholder="Your email"
+                                            value="patrickniyogitare28@gmail.com">
+                                    </div>
+                                    <div class="input-wrapper">
+                                        <label for="phone">Phone</label>
+                                        <input type="text" name="phone" placeholder="Phone" value="250785436974">
+                                    </div>
+                                    <div class="input-wrapper">
+                                        <label for="occupation">Current Occupation</label>
+                                        <input
+                                            type="text"
+                                            name="occupatation"
+                                            placeholder="Your occupation"
+                                            value="Software Engineer Student">
+                                    </div>
+                                    <div class="input-wrapper">
+                                        <label for="Location Address">Location Address</label>
+                                        <input
+                                            type="text"
+                                            name="address"
+                                            placeholder="Your location address"
+                                            value="Kigali, Rwanda">
+                                    </div>
+                                    <div class="input-wrapper save-btn">
+                                        <button class="save-profile-btn">Save Changes</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                     </div>
-                    <div class="input-wrapper">
-                        <label for="phone">Phone</label>
-                        <input type="text" name="phone" placeholder="Phone" value="250785436974">
+                    <div class="users-container subpage hide-page" id="users-container">
+                        <div class="users-main-container">
+                            <div class="add-user">
+                                <i class="fa fa-plus-circle" aria-hidden="true" title="Create a New user"></i>
+                            </div>
+
+                            <table>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Names</th>
+                                    <th>Emails</th>
+                                    <th>Account Open Date</th>
+                                    <th>Status</th>
+                                    <th>Update</th>
+                                    <th>Delete</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Muhire Eric</td>
+                                    <td>muhieric@gmail.com</td>
+                                    <td>12-08-2020</td>
+                                    <td class="offline">Offline</td>
+                                    <td onclick="triggerUpdateUserModal()" id="myBtn"><img src="../assetes/icons/pen-solid.svg" alt="pen icon"></td>
+                                    <td><img src="../assetes/icons/trash-alt-regular.svg" alt="trash icon"></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Karisa Eddy</td>
+                                    <td>karisa@gmail.com</td>
+                                    <td>09-08-2020</td>
+                                    <td class="offline">Offline</td>
+                                    <td><img src="../assetes/icons/pen-solid.svg" alt="pen icon"></td>
+                                    <td><img src="../assetes/icons/trash-alt-regular.svg" alt="trash icon"></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Apolo Kagwa</td>
+                                    <td>apolokagwa@gmail.com</td>
+                                    <td>02-08-2020</td>
+                                    <td class="online">Online</td>
+                                    <td><img src="../assetes/icons/pen-solid.svg" alt="pen icon"></td>
+                                    <td><img src="../assetes/icons/trash-alt-regular.svg" alt="trash icon"></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Peter Tom</td>
+                                    <td>tompeter@gmail.com</td>
+                                    <td>19-07-2020</td>
+                                    <td class="closed">Closed</td>
+                                    <td><img src="../assetes/icons/pen-solid.svg" alt="pen icon"></td>
+                                    <td><img src="../assetes/icons/trash-alt-regular.svg" alt="trash icon"></td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Mutesi Naddy</td>
+                                    <td>naddymutesi78@gmail.com</td>
+                                    <td>22-05-2020</td>
+                                    <td class="online">Online</td>
+                                    <td><img src="../assetes/icons/pen-solid.svg" alt="pen icon"></td>
+                                    <td><img src="../assetes/icons/trash-alt-regular.svg" alt="trash icon"></td>
+                                </tr>
+
+                            </table>
+                        </div>
                     </div>
-                    <div class="input-wrapper">
-                         <label for="occupation">Current Occupation</label>
-                        <input type="text" name="occupatation" placeholder="Your occupation" value="Software Engineer Student">
+                    <div class="blogs-container subpage hide-page" id="blogs-container">
+                        <div class="users-main-container">
+                            <div class="add-user">
+                                <i
+                                    class="fa fa-plus-circle"
+                                    aria-hidden="true"
+                                    onclick="triggerBlogModal('open')"
+                                    title="Create a New blog"></i>
+                            </div>
+
+                            <table>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Blog Title</th>
+                                    <th>Blog Owner</th>
+                                    <th>Created Date</th>
+                                    <th>Comments</th>
+                                    <th>Edit</th>
+                                    <th>Delete</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>React Dommination until 2021</td>
+                                    <td>Nelly Diane</td>
+                                    <td>12-08-2020</td>
+                                    <td onclick="triggerReadCommentsModal('open')"><img src="../assetes/icons/comments-solid.svg" alt="comment-icon"></td>
+                                    <td onclick="triggerEditBlogModal('open')"><img src="../assetes/icons/pen-solid.svg" alt="pen icon"></td>
+                                    <td><img src="../assetes/icons/trash-alt-regular.svg" alt="trash icon"></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Made by Angular</td>
+                                    <td>Eric Muneza</td>
+                                    <td>09-08-2020</td>
+                                    <td><img src="../assetes/icons/comments-solid.svg" alt="comment-icon"></td>
+                                    <td><img src="../assetes/icons/pen-solid.svg" alt="pen icon"></td>
+                                    <td><img src="../assetes/icons/trash-alt-regular.svg" alt="trash icon"></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Developer Success</td>
+                                    <td>Apolo Kagwa</td>
+                                    <td>02-08-2020</td>
+                                    <td><img src="../assetes/icons/comments-solid.svg" alt="comment-icon"></td>
+                                    <td><img src="../assetes/icons/pen-solid.svg" alt="pen icon"></td>
+                                    <td><img src="../assetes/icons/trash-alt-regular.svg" alt="trash icon"></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Remote work</td>
+                                    <td>Patrick Niyogitare</td>
+                                    <td>19-07-2020</td>
+                                    <td><img src="../assetes/icons/comments-solid.svg" alt="comment-icon"></td>
+                                    <td><img src="../assetes/icons/pen-solid.svg" alt="pen icon"></td>
+                                    <td><img src="../assetes/icons/trash-alt-regular.svg" alt="trash icon"></td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Public speaking</td>
+                                    <td>Mutesi Naddy</td>
+                                    <td>22-05-2020</td>
+                                    <td><img src="../assetes/icons/comments-solid.svg" alt="comment-icon"></td>
+                                    <td><img src="../assetes/icons/pen-solid.svg" alt="pen icon"></td>
+                                    <td><img src="../assetes/icons/trash-alt-regular.svg" alt="trash icon"></td>
+                                </tr>
+
+                            </table>
+                        </div>
+
                     </div>
-                    <div class="input-wrapper">
-                        <label for="Location Address">Location Address</label>
-                        <input type="text" name="address" placeholder="Your location address" value="Kigali, Rwanda">
-                    </div>    
-                    <div class="input-wrapper save-btn">
-                        <button class="save-profile-btn">Save Changes</button>
-                    </div> 
-                    </form>
+                    <!-- <div class="logs-container subpage hide-page" id="logs-container"> -->
+                    <!-- <div class="logs-main-container"> -->
+                    <!-- <div id="chartContainer" class="hide-page"></div> -->
+                    <!-- <script
+                    src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script> -->
+                    <!-- <script
+                    src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script> -->
+                    <!-- </div> -->
+                    <!-- </div> -->
+                    <div class="logs-container subpage hide-page" id="logs-container">
+                        <div class="logs-main-container">
+                            <div id="chartContainer"></div>
+                            <div id="failedChartContainer"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
-         </div>
-        <div class="users-container subpage hide-page" id="users-container">
-            <div class="users-main-container">
-                <div class="add-user">
-                    <i class="fa fa-plus-circle" aria-hidden="true" title="Create a New user"></i>
-                </div>
-
-                <table>
-                    <tr>
-                        <th>#</th>
-                        <th>Names</th>
-                        <th>Emails</th>
-                        <th>Account Open Date</th>
-                        <th>Status</th>
-                        <th>Update</th>
-                        <th>Delete</th>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Muhire Eric</td>
-                        <td>muhieric@gmail.com</td>
-                        <td>12-08-2020</td>
-                        <td class="offline">Offline</td>
-                        <td onclick="triggerUpdateUserModal()" id="myBtn"><img src="../assetes/icons/pen-solid.svg" alt="pen icon"></td>
-                        <td><img src="../assetes/icons/trash-alt-regular.svg" alt="trash icon"></td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Karisa Eddy</td>
-                        <td>karisa@gmail.com</td>
-                        <td>09-08-2020</td>
-                        <td class="offline">Offline</td>
-                        <td><img src="../assetes/icons/pen-solid.svg" alt="pen icon"></td>
-                        <td><img src="../assetes/icons/trash-alt-regular.svg" alt="trash icon"></td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Apolo Kagwa</td>
-                        <td>apolokagwa@gmail.com</td>
-                        <td>02-08-2020</td>
-                        <td class="online">Online</td>
-                        <td><img src="../assetes/icons/pen-solid.svg" alt="pen icon"></td>
-                        <td><img src="../assetes/icons/trash-alt-regular.svg" alt="trash icon"></td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Peter Tom</td>
-                        <td>tompeter@gmail.com</td>
-                        <td>19-07-2020</td>
-                        <td class="closed">Closed</td>
-                        <td><img src="../assetes/icons/pen-solid.svg" alt="pen icon"></td>
-                        <td><img src="../assetes/icons/trash-alt-regular.svg" alt="trash icon"></td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>Mutesi Naddy</td>
-                        <td>naddymutesi78@gmail.com</td>
-                        <td>22-05-2020</td>
-                        <td class="online">Online</td>
-                        <td><img src="../assetes/icons/pen-solid.svg" alt="pen icon"></td>
-                        <td><img src="../assetes/icons/trash-alt-regular.svg" alt="trash icon"></td>
-                    </tr>
-                  
-                </table>
-            </div>
-        </div>
-        </div>
-        </div>
-    </main>
-</body>
+        </main>
+    </body>
 </html>
 
-<!-- ----------------------------update user modal---------------------------------- -->
+<!-- ----------------------------update user
+modal---------------------------------- -->
 <div id="myModal" class="modal">
-
-    <!-- Modal content -->
     <div class="modal-content">
-      <span class="close">&times;</span>
-       <div class="userUpdate-form-wrapper">
-        <form action="">
-            <div class="input-wrapper">
-                <label for="Names">Names</label>
-                <input type="text" name="names" placeholder="Your names" value="Muhire Eric">
-            </div>
-            <div class="input-wrapper">
-                <label for="Email">Email</label>
-                <input type="email" name="email" placeholder="Your email" value="muheric@gmail.com">
-            </div>
-            <div class="input-wrapper">
-                <label for="phone">Password</label>
-                <input type="password" name="password" placeholder="Password" value="newpassword">
-            </div>
-              
-            
-            <div class="input-wrapper save-btn modal-footer-btn-wrapper">
-                <button class="close-account-btn">Close Account</button>
-                <button>Save Changes</button>
-            </div> 
+        <span class="close">&times;</span>
+        <div class="userUpdate-form-wrapper">
+            <form action="">
+                <div class="input-wrapper">
+                    <label for="Names">Names</label>
+                    <input type="text" name="names" placeholder="Your names" value="Muhire Eric">
+                </div>
+                <div class="input-wrapper">
+                    <label for="Email">Email</label>
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Your email"
+                        value="muheric@gmail.com">
+                </div>
+                <div class="input-wrapper">
+                    <label for="phone">Password</label>
+                    <input
+                        type="password"
+                        name="password"
+                        placeholder="Password"
+                        value="newpassword">
+                </div>
+
+                <div class="input-wrapper save-btn modal-footer-btn-wrapper">
+                    <button class="close-account-btn">Close Account</button>
+                    <button>Save Changes</button>
+                </div>
             </form>
-       </div>
+        </div>
     </div>
-  
- </div>
+</div>
+<!-- ----------------------------Create blog
+modal---------------------------------- -->
+
+<div id="createBlogModal" class="modal">
+    <div class="create-blog-modal-content">
+        <span class="close" onclick="triggerBlogModal('close')">&times;</span>
+        <div class="new-blog-container">
+            <div class="form-wrapper">
+                <form>
+                    <label for="Blog Title">Blog Title</label>
+                    <input type="text" name="blog-title" placeholder="Blog Title">
+
+                    <label for="Blog Body" class="description-label">Blog Description</label>
+                    <textarea name="" id="" cols="30" rows="10">Type text</textarea>
+
+                    <label for="Blog  Image">Image</label>
+                    <input type="file" name="image" hidden="hidden" id="add-blog-image">
+
+                    <button
+                        type="button"
+                        class="add-image"
+                        name="image"
+                        onclick="triggerFileInput('add-blog-image')">
+                        Attach an Image
+                    </button>
+                    <button class="create-blog-btn">Create this Blog</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ----------------------------Edit Blogmodal---------------------------------- -->
+
+<div id="editBlogModal" class="modal">
+    <div class="edit-blog-container">
+        <span class="close" onclick="triggerEditBlogModal('close')">&times;</span>
+        <div class="blog-strory-wrapper">
+            <h2 contenteditable="true">React Dommination until 2021</h2>
+            <img src="../assetes/react2.png" alt="blog image" class="blog-image">
+            <small>20/09/2020 by Patrick Niyogitare</small>
+            <p contenteditable="true">
+                Developers always prefer a framework that breaks down difficult and complicated
+                components and makes it possible to finish the project faster by creating
+                reusable codes. Traditional JS frameworks like AngularJS or EmberJS requires a
+                developer to write a lot of code for creating a module or a component. The major
+                reason behind the popularity of React JS in 2019 is that it does not demand any
+                additional effort or rework from a developer. With the flexibility and
+                robustness it offers, developers can easily build a complicated module faster
+                and reuse the code as much as needed in other modules, thereby ensuring a faster
+                application that can be rendered easily in different browsers with very little
+                loading time. This makes it a perfect choice for developers who are keen about
+                cross browser compatibility.
+            </p>
+        </div>
+        <div class="actions-wrapper">
+           <input type="file" name="new-blog-image" hidden id="new-blog-image">
+           <button onclick="triggerFileInput('new-blog-image')">Change Blog Image</button> 
+           <div class="change-author-wrapper">
+            <label for="">Author</label>
+            <select name="" id="">
+                <option value="">Patrick Niyogitare</option>
+                <option value="">Muhire Eric</option>
+                <option value="">Karisa Eddy</option>
+                <option value="">Apolo Kagwa</option>
+                <option value="">Peter Tom</option>
+                <option value="">Mutesi Naddy</option>
+            </select>
+           </div>
+           <button class="reset-blog-btn">Reset</button> 
+          </div>
+          <div class="save-btn-wrapper" title="Save Changes">
+            <i class="fa fa-floppy-o" aria-hidden="true"></i>
+          </div>
+          <div class="add-comment-wrapper">
+              <label for="Comment">Comment</label>
+              <textarea name="" id="" cols="30" rows="5">Typye comment...</textarea>
+              <button>Comment</button>
+          </div>
+    </div>
+</div>
+
+<!-- ------------------------------------------Read comments Modal------------------------------ -->
+<div class="modal" id="readCommentsModal">
+    <div class="readComments-container">
+        <span class="close" onclick="triggerReadCommentsModal('close')">&times;</span>
+        <div class="readComments-main-container">
+           <h1>React Dommination until 2021</h1>
+           <div class="comments-wrapper">
+            <table>
+                <tr>
+                    <th>#</th>
+                    <th>Viewer</th>
+                    <th>Comment</th>
+                    <th>Date Commented</th>
+                    <th>Delete</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Muhire Eric</td>
+                    <td>Thank you for updating us on ReactJs, would you please let us have more VueJs</td>
+                    <td>12-09-2020</td>
+                    <td><img src="../assetes/icons/trash-alt-regular.svg" alt="trash icon"></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Karisa Eddy</td>
+                    <td>Thank you for Information, So can help us to some React torials. It might good.</td>
+                    <td>02-08-2020</td>
+                    <td><img src="../assetes/icons/trash-alt-regular.svg" alt="trash icon"></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Apolo Kagwa</td>
+                    <td>Hello greate work, I gree with you  that react will continue to dominate 2021</td>
+                    <td>12-08-2020</td>
+                    <td><img src="../assetes/icons/trash-alt-regular.svg" alt="trash icon"></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Peter Tom</td>
+                    <td>I don't like ReactJs but I have no any other choice a part form learning it to get hired.</td>
+                    <td>12-08-2020</td>
+                    <td><img src="../assetes/icons/trash-alt-regular.svg" alt="trash icon"></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Mutesi Naddy</td>
+                    <td>Hello this is good again! May you blogs us about defferences between React,Vue and Angular. Thanks</td>
+                    <td>12-08-2020</td>
+                    <td><img src="../assetes/icons/trash-alt-regular.svg" alt="trash icon"></td>
+                </tr>
+
+            </table>
+        </div>
+    
+        </div>
+    </div>
+</div>

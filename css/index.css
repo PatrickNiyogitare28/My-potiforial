@@ -3,6 +3,9 @@
     padding: 0;
     border: 0;
 }
+:focus{
+    outline: none;
+}
 body{
  background-image: url('../assetes/index-bg-img.png');
  width: 100%;
@@ -136,6 +139,10 @@ nav ul li  a:hover{
     padding: 15px;
     background: #ED994B;
     font-size: 1.3em;
+}
+.read-btn-wrapper button a{
+    color: white;
+    text-decoration: none;
 }
 .read-btn-wrapper button:hover{
     background: #cf853f;
