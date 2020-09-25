@@ -112,3 +112,19 @@ function triggerReadCommentsModal(event){
     }
   })
 }
+function triggerCreateNewUserModal(event){
+  let modal = document.getElementById('createNewUser')
+  $(()=>{
+    if(event == 'open'){
+      $('#createNewUser').fadeIn();
+    }  
+    else if(event == 'close'){
+      $('#createNewUser').fadeOut();
+    }
+  })
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      $('#createNewUser').fadeOut();
+    }
+  }
+}

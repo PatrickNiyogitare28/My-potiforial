@@ -141,7 +141,7 @@
                     <div class="users-container subpage hide-page" id="users-container">
                         <div class="users-main-container">
                             <div class="add-user">
-                                <i class="fa fa-plus-circle" aria-hidden="true" title="Create a New user"></i>
+                                <i class="fa fa-plus-circle" aria-hidden="true" onclick="triggerCreateNewUserModal('open')" title="Create a New user"></i>
                             </div>
 
                             <table>
@@ -465,6 +465,40 @@ modal---------------------------------- -->
             </table>
         </div>
     
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="createNewUser">
+    <div class="modal-content">
+        <span onclick="triggerCreateNewUserModal('close')" class="close">&times;</span>
+        <div class="userUpdate-form-wrapper">
+            <form action="">
+                <div class="input-wrapper">
+                    <label for="Names">Names</label>
+                    <input type="text" name="names" placeholder="Your names">
+                </div>
+                <div class="input-wrapper">
+                    <label for="Email">Email</label>
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Your email"
+                       >
+                </div>
+                <div class="input-wrapper">
+                    <label for="phone">Create Password</label>
+                    <input
+                        type="password"
+                        name="password"
+                        placeholder="Password"
+                       >
+                </div>
+
+                <div class="input-wrapper save-btn modal-footer-btn-wrapper">
+                   <button>Add user</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
