@@ -85,22 +85,33 @@ function triggerUpdateUserModal(){
 }
 function triggerBlogModal(event){
   $(()=>{
+    let createBlogModal = document.getElementById('createBlogModal');
     if(event == 'open'){
       $('#createBlogModal').fadeIn();
     }  
     else if(event == 'close'){
       $('#createBlogModal').fadeOut();
     }
+    window.onclick = (event)=>{
+      if(event.target == createBlogModal){
+        $('#createBlogModal').fadeOut();
+      }
+    }
   })
-  
 }
 function triggerEditBlogModal(event){
   $(()=>{
+    let editBlogModal = document.getElementById('editBlogModal');
     if(event == 'open'){
       $('#editBlogModal').fadeIn();
     }  
     else if(event == 'close'){
       $('#editBlogModal').fadeOut();
+    }
+    window.onclick = (event)=>{
+      if(event.target == editBlogModal){
+      $('#editBlogModal').fadeOut();
+      }
     }
   })
   
@@ -108,11 +119,17 @@ function triggerEditBlogModal(event){
 
 function triggerReadCommentsModal(event){
   $(()=>{
+    let readCommentsModal = document.getElementById('readCommentsModal');
     if(event == 'open'){
       $('#readCommentsModal').fadeIn();
     }  
     else if(event == 'close'){
       $('#readCommentsModal').fadeOut();
+    }
+    window.onclick = (event)=>{
+      if(event.target == readCommentsModal){
+      $('#readCommentsModal').fadeOut();
+       }
     }
   })
 }

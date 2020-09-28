@@ -268,11 +268,14 @@ display: flex;
     display: block;
     font-size: 1em;
 }
-.input-wrapper input{
+.input-wrapper input,select{
     width: 85%;
     padding: 18px;
     border-radius: 10px 10px;
     border: 1px solid #ED994B;
+}
+.input-wrapper select{
+    width: 93%;
 }
 .input-wrapper .save-profile-btn{
     margin-top: 3em;
