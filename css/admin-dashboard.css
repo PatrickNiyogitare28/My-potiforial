@@ -16,18 +16,29 @@ main{
     width: 20%; 
     background: #363535;
     height: 620px;
-   
+ 
+}
+.sidebar-container.hide{
+    position: fixed;
+    left: -20%;
+    transition: all 500ms linear;   
 }
 .main-content-container{
     width: 80%;
     height: 100%;
     height: 620px;
 }
+.full{
+    width: 100%;
+    transition: all 500ms linear;  
+}
 
 header{
     width: 100%;
     height: 50px;
     background: #ED994B;
+    display: flex;
+    justify-content: space-between;
     align-content: center;
     position: sticky;
     top: 0;
@@ -168,7 +179,7 @@ display: flex;
     border-radius: 50%;;
 }
 .control-items-container{
-  display: grid;
+    display: grid;
     grid-template-columns: auto auto auto;
     padding: 10px;
 }
@@ -214,12 +225,12 @@ display: flex;
     justify-content: space-between;
 }
 .profile-image-wrapper{
-   width: 30%;
+    width: 30%;
     display: flex;
     flex-direction: column;
 }
 .profile-image-wrapper img{
-    width: 100%;
+    width: 300px;
     height: 300px;
     border-radius: 50%;
     background: rgb(230, 228, 228);
@@ -294,8 +305,10 @@ display: flex;
 }
 .users-main-container table tr{
    padding: 10px;
-   height: 40px;
+   height: 60px;
    cursor: pointer;
+   border-bottom: 1px solid #818181;
+   padding-top: 20em;
 }
 .users-main-container table tr:hover{
   background: silver !important;
@@ -304,7 +317,7 @@ display: flex;
     font-weight: lighter;
 }
 .users-main-container table td{
-    font-size: 0.8em;
+    /* font-size: 1em;   */
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     color: rgb(48, 47, 47);
@@ -314,9 +327,9 @@ display: flex;
 .users-main-container table tr td:nth-child(2){
   font-weight: bold;
 }
-.users-main-container table tr:nth-child(even){
+/* .users-main-container table tr:nth-child(even){
   background: rgb(211, 209, 209);
-}
+} */
 .users-main-container table tr td img{
   width: 20px;
 }
@@ -392,6 +405,7 @@ display: flex;
 .notifactions-main-container{
     width: 95%;
     padding: 0% 5% 5% 0%;
+    
    
 }
 .notifactions-main-container nav{
@@ -452,3 +466,16 @@ display: flex;
     padding-top: 1em;
     
 }
+.toggle-btn{
+    padding: 10px;
+    cursor: pointer;
+}
+.toggle-btn span{
+    display: block;
+    width: 30px;
+    height: 5px;
+    background: white;
+    margin: 3px 0px;
+   
+   }
+   

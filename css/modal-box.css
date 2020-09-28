@@ -187,27 +187,16 @@
   background: rgba(46, 142, 180, 0.678);
   color: white;
   border-radius: 10px 10px;
-  padding: 1px;
+  padding: 0px;
   font-size: 1em;
   cursor: pointer;
+  height: 50px;
 }
+
 .actions-wrapper button:hover{
   background: rgba(46, 142, 180, 0.986);
 }
-.change-author-wrapper{
-  width: 40%;
-  padding-left: 10px;
-}
-.change-author-wrapper label{
- 
-  font-size: 0.9em;
-}
-.change-author-wrapper select{
-  padding: 10px;
-  border: 1px solid #363535;
-  border-radius: 10px 10px;
-  width: 50%;
-}
+
 .actions-wrapper .reset-blog-btn{
   background: rgb(223, 223, 223) !important;
   color: #363535;
@@ -234,7 +223,6 @@
   background: #cc8849;
 }
 .save-btn-wrapper{
-  margin-top: 2em;
   width: 40px;
   height: 40px;
   background: #ED994B;
