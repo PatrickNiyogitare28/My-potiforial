@@ -139,3 +139,18 @@ function checkNotifications(){
     checkbox.prop( "checked", true )
   })
 }
+
+function toggleDashboardSidebar(){
+  $(()=>{
+    let sidebar = $('#sidebar-container');
+    let main = $('#main-content-container');
+    if(sidebar.hasClass('hide')){
+         sidebar.removeClass('hide');
+         main.removeClass('full');
+    }
+    else{
+       sidebar.addClass('hide');
+       main.addClass('full');
+    }
+  })
+}
