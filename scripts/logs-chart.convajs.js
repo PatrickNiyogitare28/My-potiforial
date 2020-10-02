@@ -1,16 +1,16 @@
 window.onload = function () {
         
-    var options = {
+    let options = {
         
         animationEnabled: true,
+        showInLegend:true,
         title: {
-            text: "Weekly Success Logs",
+            text: "This week logs",
             color: '#ffff'
         },
         axisY: {
             title: "Totoal Logs",
-            // suffix: "%"
-        },
+         },
         axisX: {
             title: "Days"
         },
@@ -18,15 +18,11 @@ window.onload = function () {
             type: "column",
             yValueFormatString: "#,##0.0#"%"",
             dataPoints: [
-                { label: "Mon", y: 7},	
-                { label: "Tue", y: 2 },	
-                { label: "Wed", y: 0},
-                { label: "Thur", y: 3 },	
-                { label: "Fri", y: 1 },
-                { label: "Sut", y: 8 },
-                { label: "San", y: 11},
-               
-                
+                { label: "Page Visitors", y: 7},	
+                { label: "New users", y: 2 },	
+                { label: "Enqueries", y: 4},
+                { label: "Unanswered Enqueries", y: 3 }
+                 
             ]
         }]
     };
@@ -34,15 +30,14 @@ window.onload = function () {
     
 
         
-    var options2 = {
+    let options2 = {
         animationEnabled: true,
         title: {
-            text: "Weekly Failed Logs"
+            text: "Previous Month logs"
         },
         axisY: {
             title: "Totoal Logs",
-            // suffix: "%"
-        },
+         },
         axisX: {
             title: "Days"
         },
@@ -50,16 +45,11 @@ window.onload = function () {
             type: "column",
             yValueFormatString: "#,##0.0#"%"",
             dataPoints: [
-                { label: "Mon", y: 0 },	
-                { label: "Tue", y: 2 },	
-                { label: "Wed", y: 0 },
-                { label: "Thur", y: 0 },	
-                { label: "Fri", y: 4 },
-                { label: "Sut", y: 2 },
-                { label: "San", y: 1 },
-               
-                
-            ]
+                { label: "Page Visitors", y: 10},	
+                { label: "New users", y: 5 },	
+                { label: "Enqueries", y: 12},
+                { label: "Unanswered Enqueries", y: 6 }
+             ]
         }]
     };
     $("#failedChartContainer").CanvasJSChart(options2);

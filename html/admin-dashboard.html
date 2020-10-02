@@ -7,12 +7,9 @@
         <link rel="stylesheet" href="../css/admin-dashboard.css">
         <link rel="stylesheet" href="../css/modal-box.css">
         <link rel="stylesheet" href="../media/admin-landing-media.css">
-        <script src="../scripts/jquery-3.5.1.min.js"></script>
-        <script src="../scripts/admin-dashbaord.js"></script>
         <link rel="stylesheet" href="../font-awesome-v4/css/font-awesome.min.css">
-        <script src="../scripts/jquery.canvasjs.min.js"></script>
-        <script src="../scripts/logs-chart.convajs.js"></script>
-
+        <link rel="stylesheet" href="../css/toasters.css">
+      
     </head>
     <body>
         <main>
@@ -48,16 +45,23 @@
                       
                     <nav>
                         <ul class="font-family">
-                            <li class="name" title="Logout">
-                                <a href="../index.html">
+                            <li class="name" title="Logout" onclick="singOut()">
+                                <!-- <a href="../index.html"> -->
                                     <i class="fa fa-power-off" aria-hidden="true"></i>
-                                </a>
+                                <!-- </a> -->
                             </li>
-                            <li class="cursor-pointer name">Patrick</li>
-                            <li class="cursor-pointer"><img src="../assetes/pc-img.png" alt="profile-image"></li>
+                            <!-- <li class="cursor-pointer name" id="displayName">Patrick</li> -->
+                            <li class="cursor-pointer">
+                                <img src="" alt="profile-image" id="banner-profile-image">
+                            </li>
                         </ul>
                     </nav>
                 </header>
+                <div class="signUpToaster" id="successToaster">
+                    <!-- <i class="fa fa-spinner" aria-hidden="true"></i> -->
+                    <i class="fa fa-check-circle" aria-hidden="true"></i>
+                    <p>Updating profile picture....</p> 
+                   </div>
                 <div class="contents-wrapper" id="contents-wrapper">
                     <!-- --------------------------------------darsboard landing
                     subpage---------------------------- -->
@@ -65,8 +69,8 @@
                         <div class="dashboard-main">
                             <div class="highright">
                                 <h3>You logged In as
-                                    <span>Patrick Niyogitare</span></h3>
-                                <img src="../assetes/pc-img.png" alt="profile-image">
+                                    <span id="displayName"></span></h3>
+                                <img src="" alt="profile-image" id="profile-image">
                             </div>
                             <div class="control-items-container">
                                 <div class="control-item" onclick="onNavigate('profile-router')">
@@ -98,9 +102,11 @@
                     <div class="profile-container subpage hide-page" id="profile-container">
                         <div class="profile-main">
                             <div class="profile-image-wrapper">
-                                <img src="../assetes/pc-img.png" alt="profile image">
-                                <input type="file" hidden="hidden" id="new-profile-image" accept="">
-                                <button onclick="triggerFileInput('new-profile-image')">Change profile Image</button>
+                                <img src="" id="profileImage" alt="profile image">
+                                <input type="file" hidden="hidden" id="new-profile-image" accept="" onchange="uploadProfileImage(event)"> 
+                                <button onclick="changeMyProfilePicture()" id="save-image-btn" class="bg-blue">Save Image</button>
+                                <button onclick="triggerFileInput('new-profile-image')" id="toggle-input">Change profile Image</button>
+                                
                             </div>
                             <div class="profile-details-wrapper">
                                 <form action="">
@@ -349,6 +355,20 @@
                 </div>
             </div>
         </main>
+        
+<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-storage.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-analytics.js"></script>
+<script src="../scripts/firebase.js"></script>
+<script src="../scripts/scripts.js"></script>
+<script src="../scripts/auth.js"></script>
+<script src="../scripts/jquery-3.5.1.min.js"></script>
+<script src="../scripts/admin-dashbaord.js"></script>
+<script src="../scripts/jquery.canvasjs.min.js"></script>
+<script src="../scripts/logs-chart.convajs.js"></script>
+
     </body>
 </html>
 
@@ -360,18 +380,13 @@ modal---------------------------------- -->
         <div class="userUpdate-form-wrapper">
             <form action="">
                 <div class="input-wrapper">
-                    <label for="Names">Names</label>
-                    <input type="text" name="names" placeholder="Your names" value="Muhire Eric">
+                    <label for="Names">Update Role</label>
+                    <select name="" id="">
+                        <option value="">Stardard User</option>
+                        <option value="">Admin</option>
+                    </select>
                 </div>
-                <div class="input-wrapper">
-                    <label for="Email">Email</label>
-                    <input
-                        type="email"
-                        name="email"
-                        placeholder="Your email"
-                        value="muheric@gmail.com">
-                </div>
-                <div class="input-wrapper">
+              <div class="input-wrapper">
                     <label for="phone">Password</label>
                     <input
                         type="password"
@@ -522,17 +537,17 @@ modal---------------------------------- -->
     <div class="modal-content">
         <span onclick="triggerCreateNewUserModal('close')" class="close">&times;</span>
         <div class="userUpdate-form-wrapper">
-            <form action="">
+            <form action="" onsubmit="event.preventDefault()">
                 <div class="input-wrapper">
-                    <label for="Names">Names</label>
-                    <input type="text" name="names" placeholder="Your names">
+                    <label for="Names" >Names</label>
+                    <input type="text" name="names" placeholder="Your names" id="newUser-name">
                 </div>
                 <div class="input-wrapper">
                     <label for="Email">Email</label>
                     <input
                         type="email"
                         name="email"
-                        placeholder="Your email"
+                        placeholder="Your email" id="newUser-email"
                        >
                 </div>
                 <div class="input-wrapper">
@@ -540,7 +555,7 @@ modal---------------------------------- -->
                     <input
                         type="password"
                         name="password"
-                        placeholder="Password"
+                        placeholder="Password" id="newUser-password"
                        >
                 </div>
 

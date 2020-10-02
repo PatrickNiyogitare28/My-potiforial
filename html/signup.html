@@ -7,7 +7,10 @@
     
     <link rel="stylesheet" href="../css/signup.css">
     <link rel="stylesheet" href="../media/signup-media.css">
-    <script src="../scripts/scripts.js"></script>
+    <script src="../scripts/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="../font-awesome-v4/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/toasters.css">
+
 </head>
 <body>
     <header>
@@ -38,30 +41,51 @@
                 <span></span>
             </div>
            </div> 
+           <div class="errorBox" id="errorBox">
+              <i onclick="resetSingUpForm()" class="fa fa-times-circle" aria-hidden="true"></i>
+              <p id="errorMessage"></p> 
+           </div>
+           <div class="signUpToaster" id="signUpToaster">
+            <!-- <i class="fa fa-spinner" aria-hidden="true"></i> -->
+            <i class="fa fa-check-circle" aria-hidden="true"></i>
+            <p>Signing up....</p> 
+           </div>
         <div class="signin-container">
             <div class="left-form-wrapper">
                 <div class="highright-text-wrapper">
                     <h1>Get In Touch <small>Oohh You have account?</small> </h1>
-                    <a href="./singin.html"><button>Login</button></a> 
+                    <a href="./singin.html"><button >Login</button></a> 
                 </div>
                
           </div>
           <div class="right-form-wrapper">
-              <form action="">
+              <form action="" onsubmit="event.preventDefault()" id="signup-form">
                 <div class="input-wrapper">
-                    <label for="Email">Names</label>
-                    <input type="text" name="email" placeholder="Your names">
+                   <input type="text" name="email" placeholder="Names" id="name" onkeyup="resetSingUpForm()">
                   </div>
                   <div class="input-wrapper">
-                    <label for="Email">Email</label>
-                    <input type="text" name="email" placeholder="Your email">
+                     <input type="text" name="email" placeholder="Email" id="email" onkeyup="resetSingUpForm()">
                   </div>
                  <div class="input-wrapper">
-                    <label for="Password">Create Password</label>
-                    <input type="passoword" nam="passoword" placeholder="Enter Password">
+                   <input type="password" name="passoword" placeholder="Create Password" id="password"
+                    onkeyup="resetSingUpForm()">
                  </div>
                  <div class="input-wrapper">
-                    <button>Signup</button>
+                   <input type="password" name="veripassoword" placeholder="Verify Password" 
+                   id="veripassword" onkeyup="resetSingUpForm()">
+                 </div>
+        
+                    <!-- <input type="file" name="profile-image"  onchange="uploadProfileImage(event)"
+                    placeholder="Enter Password" id="profile-image" required hidden> -->
+                  <!-- <div class="input-wrapper">
+                    <button id="trigger-addFile-btn" type="button" onclick="trigerFileInput()" 
+                    accept="image/x-png,image/gif,image/jpeg">
+                        Add Profile Picture
+                    </button>
+                 </div> -->
+                 
+                 <div class="input-wrapper">
+                    <button type="submit" onclick="addUser()">Signup</button>
                  </div>
                 
               </form>
@@ -69,5 +93,14 @@
         </div>
         
     </main>
+
+<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-storage.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-analytics.js"></script>
+<script src="../scripts/firebase.js"></script>
+<script src="../scripts/scripts.js"></script>
+<script src="../scripts/auth.js"></script>
 </body>
 </html>
