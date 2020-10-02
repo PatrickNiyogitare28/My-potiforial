@@ -6,7 +6,10 @@
     <title>Patrick Bland | Signin</title>
     <link rel="stylesheet" href="../css/singin.css">
     <link rel="stylesheet" href="../media/signin-media.css">
-    <script src="../scripts/scripts.js"></script>
+    <link rel="stylesheet" href="../css/toasters.css">
+    <link rel="stylesheet" href="../font-awesome-v4/css/font-awesome.min.css">
+
+    
 </head>
 <body>
     <header>
@@ -37,6 +40,17 @@
                 <span></span>
             </div>
            </div> 
+    
+         <div class="errorBox" id="errorBox">
+            <i onclick="resetSingInForm()" class="fa fa-times-circle" aria-hidden="true"></i>
+            <p id="errorMessage"></p> 
+         </div>
+         <div class="signUpToaster" id="signInToaster">
+          <!-- <i class="fa fa-spinner" aria-hidden="true"></i> -->
+          <i class="fa fa-check-circle" aria-hidden="true"></i>
+          <p>Logingin....</p> 
+         </div>
+
         <div class="signin-container">
             <div class="left-form-wrapper">
                 <div class="highright-text-wrapper">
@@ -46,17 +60,19 @@
                
           </div>
           <div class="right-form-wrapper">
-              <form action="">
+              <form action="" onsubmit="event.preventDefault()">
                   <div class="input-wrapper">
                     <label for="Email">Email</label>
-                    <input type="text" name="email" placeholder="Your email">
+                    <input type="text" name="email" placeholder="Your email" id="email" onkeyup="resetSingInForm()">
                   </div>
                  <div class="input-wrapper">
                     <label for="Password">Password</label>
-                    <input type="passoword" nam="passoword" placeholder="Enter Password">
+                    <input type="password" name="password" placeholder="Enter Password" id="password" onkeyup="resetSingInForm()">
                  </div>
                  <div class="input-wrapper">
-                  <button><a href="./admin-dashboard.html" class="router-to-dash">Login</a></button>
+                  <button onclick="loginUser()">
+                    Login
+                </button>
                  </div>
                 
               </form>
@@ -64,5 +80,12 @@
         </div>
         
     </main>
+<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-analytics.js"></script>
+<script src="../scripts/firebase.js"></script>
+<script src="../scripts/scripts.js"></script>
+<script src="../scripts/auth.js"></script>
 </body>
 </html>

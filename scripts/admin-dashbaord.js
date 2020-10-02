@@ -1,3 +1,54 @@
+let image = document.getElementById('profile-image');
+let bannerProfileImage = document.getElementById('banner-profile-image');
+let profileImage = document.getElementById('profileImage');
+auth.onAuthStateChanged((user)=>{
+  if(!user){
+    window.location.href="../index.html";
+  }
+  else{
+    image.src='../assetes/default-avatar.jpg';
+    bannerProfileImage.src = '../assetes/default-avatar.jpg';
+    profileImage.src = '../assetes/default-avatar.jpg';
+
+    document.getElementById('displayName').innerHTML = user.displayName;
+    if(user.photoURL != null){
+      storage.ref(user.photoURL).getDownloadURL().then((imageURL)=>{
+        image.src = imageURL;
+        bannerProfileImage.src = imageURL;
+        profileImage.src = imageURL;
+    }).catch((err)=>{
+      alert(err)
+    })
+    }
+   }
+})
+
+
+let proImage = {}
+function uploadProfileImage(event){
+  if(event.target.files[0] != null){
+    proImage = event.target.files[0];
+    document.getElementById('save-image-btn').style.display="block";
+  }
+}
+function changeMyProfilePicture(){
+  let user = auth.currentUser;
+  if(user){
+    document.getElementById('successToaster').classList.toggle('active');
+    storage.ref('users/'+user.uid+'/profile.jpg').put(proImage).then(res =>{
+      user.updateProfile({
+        photoURL: `users/${user.uid}/profile.jpg`
+    }).then(res=>{
+      window.location.reload();
+    }).catch(error =>{
+      alert(error);
+    })
+    }).catch(err =>{
+      alert(err);
+    })
+  }
+}
+
 $(()=>{
     $('#darshboard-router').click(()=>{
        hideWrappers(); 
@@ -169,5 +220,21 @@ function toggleDashboardSidebar(){
        sidebar.addClass('hide');
        main.addClass('full');
     }
+  })
+}
+
+function createUser(){
+  const name = document.getElementById('newUser-name').value;
+  const email = document.getElementById('newUser-email').value;
+  const password = document.getElementById('newUser-password').value;
+
+  auth.createUser({
+    email:email,
+    displayName: name,
+    password: password
+  }).then((user)=>{
+     alert(user);
+  }).catch((error)=>{
+    alert(error);
   })
 }

@@ -482,3 +482,7 @@ display: flex;
    
    }
    
+   .bg-blue{
+       background: rgb(41, 85, 167) !important;
+       display: none;
+   }

@@ -1,0 +1,78 @@
+.errorBox.active{
+    width: 400px;
+    height: 70px;
+    transition: all 200ms linear;
+}
+
+.errorBox{
+    width: 0px;
+    height: 60px;
+    /* text-align: center; */
+    color: white;
+    background:red;
+    position: absolute;
+    right: 0%;
+    margin-top: 1em;
+    align-items: center;
+    border-radius: 10px 0px 0px 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    font-size: 13px;
+    transition: all 200ms linear;
+
+}
+.errorBox p{
+    display: none;
+    /* padding: 10px; */
+ 
+}
+.errorBox.active p{
+    text-align: center;
+    display: block;
+}
+.errorBox.active i{
+    display: block;
+}
+.errorBox i{
+    display: none;;
+    cursor: pointer;
+    padding: 5px;
+    color: white;
+    font-size: 20px;
+}
+.signUpToaster{
+    width: 0px;
+    height: 60px;
+    /* text-align: center; */
+    color: white;
+    background:rgb(36, 122, 36);
+    position: absolute;
+    right: 0%;
+    margin-top: 1em;
+    align-items: center;
+    border-radius: 10px 0px 0px 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    font-size: 13px;
+    transition: all 200ms linear;
+}
+.signUpToaster.active{
+    width: 400px;
+    height: 70px;
+    transition: all 200ms linear;
+}
+.signUpToaster p{
+    display: none;
+}
+.signUpToaster.active p{
+    text-align: center;
+    display: block;
+}
+.signUpToaster.active i{
+    display: block;
+}
+.signUpToaster i{
+    display: none;;
+    cursor: pointer;
+    padding: 5px;
+    color: white;
+    font-size: 20px;
+}
