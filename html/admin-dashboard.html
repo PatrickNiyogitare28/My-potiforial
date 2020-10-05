@@ -52,7 +52,7 @@
                             </li>
                             <!-- <li class="cursor-pointer name" id="displayName">Patrick</li> -->
                             <li class="cursor-pointer">
-                                <img src="" alt="profile-image" id="banner-profile-image">
+                                <img src="../assetes/default-avatar.jpg" alt="profile-image" id="banner-profile-image">
                             </li>
                         </ul>
                     </nav>
@@ -69,8 +69,8 @@
                         <div class="dashboard-main">
                             <div class="highright">
                                 <h3>You logged In as
-                                    <span id="displayName"></span></h3>
-                                <img src="" alt="profile-image" id="profile-image">
+                                    <span id="displayName">Loading...</span></h3>
+                                <img src="../assetes/default-avatar.jpg" alt="profile-image" id="profile-image">
                             </div>
                             <div class="control-items-container">
                                 <div class="control-item" onclick="onNavigate('profile-router')">
@@ -102,7 +102,7 @@
                     <div class="profile-container subpage hide-page" id="profile-container">
                         <div class="profile-main">
                             <div class="profile-image-wrapper">
-                                <img src="" id="profileImage" alt="profile image">
+                                <img src="../assetes/default-avatar.jpg" id="profileImage" alt="profile image">
                                 <input type="file" hidden="hidden" id="new-profile-image" accept="" onchange="uploadProfileImage(event)"> 
                                 <button onclick="changeMyProfilePicture()" id="save-image-btn" class="bg-blue">Save Image</button>
                                 <button onclick="triggerFileInput('new-profile-image')" id="toggle-input">Change profile Image</button>

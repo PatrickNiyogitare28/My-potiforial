@@ -61,38 +61,30 @@
           <div class="right-form-wrapper">
               <form action="" onsubmit="event.preventDefault()" id="signup-form">
                 <div class="input-wrapper">
-                   <input type="text" name="email" placeholder="Names" id="name" onkeyup="resetSingUpForm()">
+                   <input type="text" name="name" placeholder="Names" 
+                   onchange="validateName()" id="name" onkeyup="resetField('name')">
                   </div>
                   <div class="input-wrapper">
-                     <input type="text" name="email" placeholder="Email" id="email" onkeyup="resetSingUpForm()">
+                     <input type="text" name="email" placeholder="Email" id="email"
+                     onchange="validateEmail()">
                   </div>
                  <div class="input-wrapper">
                    <input type="password" name="passoword" placeholder="Create Password" id="password"
-                    onkeyup="resetSingUpForm()">
+                    onchange="validatePassword()" onkeyup="resetField('password')">
                  </div>
                  <div class="input-wrapper">
                    <input type="password" name="veripassoword" placeholder="Verify Password" 
-                   id="veripassword" onkeyup="resetSingUpForm()">
+                    onchange="validatePasswordVeri()" id="veripassword" onkeyup="resetField('veripassword')">
                  </div>
         
-                    <!-- <input type="file" name="profile-image"  onchange="uploadProfileImage(event)"
-                    placeholder="Enter Password" id="profile-image" required hidden> -->
-                  <!-- <div class="input-wrapper">
-                    <button id="trigger-addFile-btn" type="button" onclick="trigerFileInput()" 
-                    accept="image/x-png,image/gif,image/jpeg">
-                        Add Profile Picture
-                    </button>
-                 </div> -->
-                 
-                 <div class="input-wrapper">
-                    <button type="submit" onclick="addUser()">Signup</button>
+                  <div class="input-wrapper">
+                    <button type="submit" onclick="addUser()" id="btn">Signup</button>
                  </div>
                 
               </form>
           </div>
         </div>
-        
-    </main>
+       </main>
 
 <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-auth.js"></script>
@@ -102,5 +94,6 @@
 <script src="../scripts/firebase.js"></script>
 <script src="../scripts/scripts.js"></script>
 <script src="../scripts/auth.js"></script>
+<script src="../scripts/validation.js"></script>
 </body>
 </html>

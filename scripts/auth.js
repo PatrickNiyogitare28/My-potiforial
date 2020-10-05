@@ -5,17 +5,14 @@ const addUser = ()=>{
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
     const veripassword = document.getElementById('veripassword').value;
-     
     const error = validateSingUpData(name,email,password,veripassword);
     if(!error){
         document.getElementById('signUpToaster').classList.toggle('active');
         auth.createUserWithEmailAndPassword(email,password).then(authUser => {
             const user = auth.currentUser;
             if(user){
-                // storage.ref('users/'+user.uid+'/profile.jpg').put(file).then(()=>{
-                    user.updateProfile({
+               user.updateProfile({
                         displayName: name
-                        // photoURL: `users/${user.uid}/profile.jpg`
                     }).then((result)=>{
                         console.log(result);
                         signupForm.reset();
@@ -23,9 +20,7 @@ const addUser = ()=>{
                     }).catch((err)=>{
                         alert(err)
                     })
-                //  }).catch((err)=>{
-                //      alert(err);
-                //  })
+                
             }
         }) .catch(error => {
             alert(error);
@@ -80,7 +75,7 @@ function loginUser(){
 
 function singOut(){
 auth.signOut().then(()=>{
-            window.location.href = "../index.html";
+     window.location.href = "../index.html";
  })
 }
 
@@ -92,30 +87,6 @@ function uploadProfileImage(event){
     }
 }
 
-function validateSingUpData(name,email,password,veripassword){
-  let erroMessage = document.getElementById('errorMessage');
-  if(name == ""){
-    triggerError('name');
-    erroMessage.innerHTML = "Name is requered";
-    return true;
-  }
-  
-   if(email == ""){
-    triggerError('email');
-    erroMessage.innerHTML = "Email is required";
-    return true;
-   }
-  if(password == "" || password.length < 6){
-    triggerError('password');
-    erroMessage.innerHTML = "Password should be atleast 6 chars";
-    return true;
-  }
-  if(password != veripassword){
-      triggerError('veripassword');
-      erroMessage.innerHTML = "Wrong password verification";
-      return true;
-  }
-}
 
 function triggerError(dangerInput){
   $(()=>{
@@ -124,18 +95,11 @@ function triggerError(dangerInput){
     })
 }
 
-function resetSingUpForm(){
-  $(()=>{
-        let dagerField = $('#signup-form').find('.dangerField');
-        dagerField.removeClass('dangerField');
-        $('#errorBox').removeClass('active'); 
-    })
-}
 function resetSingInForm(){
-    // alert("helo")
-    $(()=>{
+   $(()=>{
         $('#errorBox').removeClass('active'); 
     })
 }
+
 
 
