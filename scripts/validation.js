@@ -56,7 +56,7 @@ function validateSingUpData(name,email,password,veripassword){
         if($(`#email`).hasClass('dangerField')){ 
           $(`#email`).removeClass('dangerField');
           hideErrorBox();
-         
+          return false;
         }
         reEnableForm();
       })
@@ -64,6 +64,7 @@ function validateSingUpData(name,email,password,veripassword){
 
    if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){  
       triggerError('email');
+      $(()=>{$('#email').addClass('dangerField  ')})
       erroMessage.innerHTML = "Enter a valid email";
       disableSignUpField('email');
       return true;  
@@ -97,6 +98,24 @@ function validatePasswordVeri(){
   }
 }
 
+
+
+function calculateChar(){
+  let currentChars = document.getElementById('typedChars');
+  let query = document.getElementById('query').value;
+  currentChars.innerHTML = query.length;
+
+  if(query.length > 300){
+    let erroMessage = document.getElementById('errorMessage');
+    triggerError('query');
+    erroMessage.innerHTML = "You can not go beyond 300 characters";
+    disableSignUpField('query');
+    return true;  
+  }
+  else{
+    resetField('query');
+  }
+}
 function resetField(fieldName){
   let fieldValue = document.getElementById(`${fieldName}`).value;
   if(fieldName == "name"){
@@ -128,6 +147,11 @@ function resetField(fieldName){
       reEnableForm();
     }
   }
+  else if(fieldName == "query"){
+    $(`#${fieldName}`).removeClass('dangerField');
+    hideErrorBox();
+    reEnableForm();
+  }
  }
 
 function hideErrorBox(){
@@ -137,7 +161,7 @@ $(()=>{
 }
 
 function disableSignUpField(fieldId){
-  var form = document.getElementById("signup-form");
+  var form = document.getElementById("form");
   var elements = form.elements;
   for (var i = 0, len = elements.length; i < len; ++i) {
       elements[i].readOnly = true;
@@ -155,7 +179,7 @@ function disableSignUpField(fieldId){
 }
 
 function reEnableForm(){
-  var form = document.getElementById("signup-form");
+  var form = document.getElementById("form");
   var elements = form.elements;
   for (var i = 0, len = elements.length; i < len; ++i) {
       elements[i].readOnly = false;
@@ -169,3 +193,4 @@ function reEnableForm(){
    
 })
 }
+

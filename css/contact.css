@@ -243,4 +243,9 @@ main{
 .mobile-toggle-header{
     display: none;
 }
-
+.characters-counter{
+    color: wheat;
+}
+.dangerField{
+    border-color: red !important;
+}

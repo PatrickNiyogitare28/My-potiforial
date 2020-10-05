@@ -1,6 +1,6 @@
 let file = {};
 const addUser = ()=>{
-    const signupForm = document.querySelector('#signup-form');
+    const signupForm = document.querySelector('#form');
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
@@ -30,7 +30,7 @@ const addUser = ()=>{
 }
 
 function singUpUser(){
-    const signupForm = document.querySelector('#signup-form');
+    const signupForm = document.querySelector('#form');
     try{
         db.collection('users').add({
             name: document.getElementById('name').value,
