@@ -50,22 +50,25 @@ function validateSingUpData(name,email,password,veripassword){
   
     var atposition=email.indexOf("@");  
     var dotposition=email.lastIndexOf(".");  
-   $(()=>{
-      if($(`#email`).hasClass('dangerField')){ 
-        $(`#email`).removeClass('dangerField');
-        hideErrorBox();
-       
-      }
-      reEnableForm();
-    })
+     
+    if((atposition>1 && dotposition>atposition+2)){
+      $(()=>{
+        if($(`#email`).hasClass('dangerField')){ 
+          $(`#email`).removeClass('dangerField');
+          hideErrorBox();
+         
+        }
+        reEnableForm();
+      })
+     }
 
-    if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){  
+   if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){  
       triggerError('email');
       erroMessage.innerHTML = "Enter a valid email";
       disableSignUpField('email');
       return true;  
      }  
-  }
+}
 
 
 function validatePassword(){
