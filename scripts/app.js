@@ -1,3 +1,7 @@
+let today = new Date();
+let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+
 function onSendQuery(){
    let name = document.getElementById('name').value;
    let email = document.getElementById('email').value;
@@ -9,9 +13,6 @@ function onSendQuery(){
      erroMessage.innerHTML = "Error: The form may contain empty required fields";
      }
      else{
-        let today = new Date();
-        let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-        let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
          let successToaster =  document.getElementById('signUpToaster')
          successToaster.classList.toggle('active'); 
          db.collection('inquiries').doc().set({
@@ -33,4 +34,15 @@ function onSendQuery(){
             alert(error);
         })
      }
+}
+
+function onSubscribe(){
+    let subscriptionEmail = document.getElementById('subscriptionEmail').value;
+    let invalidSubEmail = validateSubscriptionEmail();
+    console.log(invalidSubEmail)
+    if(invalidSubEmail != true){
+        let successToaster =  document.getElementById('signUpToaster')
+        successToaster.classList.toggle('active'); 
+
+    }
 }

@@ -56,7 +56,7 @@ function validateSingUpData(name,email,password,veripassword){
         if($(`#email`).hasClass('dangerField')){ 
           $(`#email`).removeClass('dangerField');
           hideErrorBox();
-          return false;yy
+          return false;
         }
         reEnableForm();
       })
@@ -115,6 +115,30 @@ function calculateChar(){
   else{
     resetField('query');
   }
+}
+
+function validateSubscriptionEmail(){
+ let subscriptionEmail =  document.getElementById('subscriptionEmail').value;
+ var atposition=subscriptionEmail.indexOf("@");  
+ var dotposition=subscriptionEmail.lastIndexOf(".");
+
+ if((atposition>1 && dotposition>atposition+2)){
+  $(()=>{
+    if($(`#subscriptionEmail`).hasClass('dangerField')){ 
+      $(`#subscriptionEmail`).removeClass('dangerField');
+      hideErrorBox();
+      return false;
+    }
+   })
+ }
+
+ if (atposition<1 || dotposition<atposition+2 || dotposition+2>=subscriptionEmail.length){  
+  let erroMessage = document.getElementById('errorMessage');
+  triggerError('subscriptionEmail');
+  erroMessage.innerHTML = "A valid Subscription Email is required";
+  return true;  
+ }  
+ return false;
 }
 function resetField(fieldName){
   let fieldValue = document.getElementById(`${fieldName}`).value;
