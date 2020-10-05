@@ -56,7 +56,7 @@ function validateSingUpData(name,email,password,veripassword){
         if($(`#email`).hasClass('dangerField')){ 
           $(`#email`).removeClass('dangerField');
           hideErrorBox();
-          return false;
+          return false;yy
         }
         reEnableForm();
       })
