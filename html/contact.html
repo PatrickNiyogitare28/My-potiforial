@@ -66,9 +66,9 @@
                             <small class="characters-counter"><span id="typedChars">0</span>/300</small>
                            <button id="btn" onclick="onSendQuery()">SEND</button>
                        </form>
-                       <form action="" class="subscribe-form">
-                           <input type="text" placeholder="Email">
-                           <button>SUBSCRIBE</button>
+                       <form action="" class="subscribe-form" onsubmit="event.preventDefault()">
+                           <input type="text" placeholder="Email" id="subscriptionEmail">
+                           <button onclick="onSubscribe()">SUBSCRIBE</button>
                        </form>
                     </div>
                     <div class="social-medial-wrapper">
