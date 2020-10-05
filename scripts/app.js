@@ -43,6 +43,20 @@ function onSubscribe(){
     if(invalidSubEmail != true){
         let successToaster =  document.getElementById('signUpToaster')
         successToaster.classList.toggle('active'); 
-
+        
+        db.collection('subscriptions').doc().set({
+            email: subscriptionEmail,
+            date: date,
+            time: time
+        }).then(()=>{
+            let successMessage = document.getElementById('successMessage');
+            successMessage.innerHTML="Thank you for subscribing"
+            document.getElementById('subscriptionEmail').value="";
+            setTimeout(()=>{
+                successToaster.classList.remove('active');
+            },3000)
+        }).catch((error)=>{
+            alert(error);
+        })
     }
 }
