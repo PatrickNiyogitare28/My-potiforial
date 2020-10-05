@@ -1,6 +1,7 @@
 let image = document.getElementById('profile-image');
 let bannerProfileImage = document.getElementById('banner-profile-image');
 let profileImage = document.getElementById('profileImage');
+
 auth.onAuthStateChanged((user)=>{
   if(!user){
     window.location.href="../index.html";
