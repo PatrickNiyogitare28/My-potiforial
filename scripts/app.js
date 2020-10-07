@@ -60,3 +60,91 @@ function onSubscribe(){
         })
     }
 }
+
+function updateUserProfile(){
+    let displayName = document.getElementById('profileName').value
+    let phone = document.getElementById('profilePhone').value
+    let email = document.getElementById('profileEmail').value
+    let occupation = document.getElementById('occupation').value
+    let address = document.getElementById('address').value
+   
+    auth.onAuthStateChanged(async(user)=>{
+        if(!user){return window.location.href="../index.html"}
+          
+           user.updateEmail(email).catch((err)=> alert(err));
+           user.updateProfile({
+            displayName: displayName,
+           
+         })
+        .then(()=>{ "Auth profile updated"})
+        .catch((err)=>{ alert("error occured"+err)})
+        const profileRef = db.collection('profiles').doc(`${user.uid}`);
+        const doc = await profileRef.get();
+        if (!doc.exists) {
+            profileRef.set({
+                 phoneNumber:phone,
+                 occupation: occupation,
+                 address: address
+           }).then(()=>{
+               
+           }).catch(error => alert(error))
+        } else {
+           profileRef.update({
+              phoneNumber:phone, 
+              occupation: occupation,
+              address: address
+          }).then(()=>{
+     }).catch()
+ }
+})
+}
+
+let blogImage = {};
+let successToaster =  document.getElementById('successToaster')
+let successMessage =  document.getElementById('successMessage')
+function getBlogAttachement(event){
+    if(event.target.files[0] != null){
+        blogImage = event.target.files[0];
+        successToaster.classList.toggle('active');
+        successMessage.innerHTML="Attachement uploaded";
+        setTimeout(() => {
+          successToaster.classList.remove('active');
+      }, 3000);
+   }
+}
+
+function createNewBlog(){
+    let user = auth.currentUser;
+    if(!user){
+        return window.location.href="../index.html";
+    }
+    let blogTitle = document.getElementById('newBlogTitle').value;
+    let blogBody = document.getElementById('newBlogBody').value;
+    const blogId = getBlogId();
+    let blogForm = document.getElementById('blogForm'); 
+    successToaster.classList.toggle('active');
+    successMessage.innerHTML="Creating....";
+     storage.ref(`blogs/${blogId}/blogImage.jpg`).put(blogImage).then(()=>{
+        db.collection('blogs').doc(`${blogId}`).set({
+            title: blogTitle,
+            blogBody: blogBody,
+            date: date,
+            owner: user.uid,
+            imageURL: `blogs/${blogId}/blogImage.jpg`
+        }).then(()=>{
+            blogForm.reset();
+            successMessage.innerHTML="Blog created successfully"
+            setTimeout(()=>{
+                successToaster.classList.remove('active');
+            },3000)
+        })
+         .catch(error => {
+             console.log(error);
+         })
+    }).catch((error)=>{
+        alert(error);
+    })
+
+    
+    
+}
