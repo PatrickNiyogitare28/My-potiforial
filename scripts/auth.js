@@ -8,11 +8,22 @@ const addUser = ()=>{
     const error = validateSingUpData(name,email,password,veripassword);
     if(!error){
         document.getElementById('signUpToaster').classList.toggle('active');
-        auth.createUserWithEmailAndPassword(email,password).then(authUser => {
+        auth.createUserWithEmailAndPassword(email,password).then(async authUser => {
             const user = auth.currentUser;
             if(user){
+                const profileRef = db.collection('profiles').doc(`${user.uid}`);
+                const doc = await profileRef.get();
+                if (!doc.exists) {
+                        profileRef.set({
+                        Names: name,
+                       
+                }).then(()=>{
+               
+           }).catch(error => alert(error)) 
+        }
                user.updateProfile({
                         displayName: name
+                        
                     }).then((result)=>{
                         console.log(result);
                         signupForm.reset();

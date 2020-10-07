@@ -82,14 +82,17 @@ function updateUserProfile(){
         const doc = await profileRef.get();
         if (!doc.exists) {
             profileRef.set({
+                 Names: displayName,
                  phoneNumber:phone,
                  occupation: occupation,
-                 address: address
+                 address: address,
+              
            }).then(()=>{
                
            }).catch(error => alert(error))
         } else {
            profileRef.update({
+              Names: displayName,
               phoneNumber:phone, 
               occupation: occupation,
               address: address
@@ -144,7 +147,114 @@ function createNewBlog(){
     }).catch((error)=>{
         alert(error);
     })
-
-    
-    
 }
+let blogs = [];
+function retreiveBlogs(){
+    
+    db.collection("blogs")
+    .get()
+    .then(function(querySnapshot) {
+        querySnapshot.forEach((doc)=> {
+             db.collection('profiles')
+             .doc(`${doc.data().owner}`)
+             .get()
+             .then((profile)=>{
+                console.log(profile.data().Names)
+                storage.ref(doc.data().imageURL).getDownloadURL().then((imageURL)=>{
+                     blogs.push({
+                        title: doc.data().title,
+                        body: doc.data().blogBody,
+                        date: doc.data().date,
+                        owner: profile.data().Names,
+                        imageURL: imageURL
+                    });
+                   }).catch((err)=>{
+                  alert(err)
+                })
+            }).catch(error =>{ console.log("Profile Error"+error)})
+           
+            // doc.data() is never undefined for query doc snapshots
+            // console.log(doc.id, " => ", doc.data());
+            
+            // blogs.push({
+            //     title: doc.data().blogTitle,
+            //     body: doc.data().blogBody,
+            //     date: doc.data().date,
+            //     owner: "",
+            //     imageURL: ""
+            // });
+
+        });
+        setTimeout(() => {
+           displayBlog();
+        }, 5000);
+    })
+    .catch(function(error) {
+        console.log("Error getting documents: ", error);
+    }); 
+   
+}
+retreiveBlogs();
+
+
+function displayBlog(){
+  let title = document.getElementById('blogTitle');
+  let image = document.getElementById('blogImage');
+  let owner = document.getElementById('blogOwner')
+  let date = document.getElementById('date');
+  let blogBody = document.getElementById('blogBody');
+
+  let size = blogs.length;
+  console.log(blogs)
+  title.innerHTML = blogs[size-1].title;
+  image.src = blogs[size-1].imageURL;
+  owner.innerHTML = blogs[size-1].owner;
+  date.innerHTML = blogs[size-1].date;
+  blogBody.innerHTML= blogs[size-1].body;
+
+  blogs.forEach(blog => {
+      let otherBlogsContainer = document.getElementById('otherBlogs');
+
+      let blogItem = document.createElement('div');
+      blogItem.setAttribute('class','blog-item');
+
+      let blogHeader = document.createElement('h3');
+      let headerText = document.createTextNode(`${blog.title}`);
+      blogHeader.appendChild(headerText);
+
+      let blogImage = document.createElement('img');
+      blogImage.setAttribute('src',`${blog.imageURL}`);
+     
+      let small = document.createElement('small');
+      let smallText = document.createTextNode('Read');
+      small.appendChild(smallText);
+      small.setAttribute('onclick',`readBlog('${blog.title}')`)
+
+      blogItem.appendChild(blogHeader);
+      blogItem.appendChild(blogImage);
+      blogItem.appendChild(small);
+      otherBlogsContainer.appendChild(blogItem);
+      
+  })
+ }
+
+ function readBlog(title){
+    let blogtitle = document.getElementById('blogTitle');
+    let blogimage = document.getElementById('blogImage');
+    let blogowner = document.getElementById('blogOwner')
+    let blogdate = document.getElementById('date');
+    let blogContent = document.getElementById('blogBody');
+
+     blogs.forEach(blog =>{
+         if(blog.title == title){
+              blogtitle.innerHTML = blog.title;
+              blogimage.src = blog.imageURL;
+              blogowner.innerHTML = blog.owner;
+              blogdate.innerHTML = blog.date;
+              blogContent.innerHTML = blog.body;
+              $(window).scrollTop(0); 
+         }
+     })
+ }
+
+ 

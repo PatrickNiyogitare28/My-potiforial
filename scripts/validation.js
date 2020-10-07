@@ -62,7 +62,7 @@ function validateSingUpData(name,email,password,veripassword){
       })
      }
 
-   if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){  
+   if (atposition<1 || dotposition<atposition+2 || dotposition+2>=email.length){  
       triggerError('email');
       $(()=>{$('#email').addClass('dangerField  ')})
       erroMessage.innerHTML = "Enter a valid email";
