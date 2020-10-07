@@ -2,7 +2,7 @@ let image = document.getElementById('profile-image');
 let bannerProfileImage = document.getElementById('banner-profile-image');
 let profileImage = document.getElementById('profileImage');
 
-auth.onAuthStateChanged((user)=>{
+auth.onAuthStateChanged(async(user)=>{
   if(!user){
     window.location.href="../index.html";
   }
@@ -12,6 +12,11 @@ auth.onAuthStateChanged((user)=>{
     profileImage.src = '../assetes/default-avatar.jpg';
 
     document.getElementById('displayName').innerHTML = user.displayName;
+    document.getElementById('profileName').value = user.displayName;
+    document.getElementById('profileEmail').value= user.email
+    if(user.phoneNumber){
+      document.getElementById('profilePhone').value= user.phoneNumber;
+  }
     if(user.photoURL != null){
       storage.ref(user.photoURL).getDownloadURL().then((imageURL)=>{
         image.src = imageURL;
@@ -21,7 +26,43 @@ auth.onAuthStateChanged((user)=>{
       alert(err)
     })
     }
-   }
+     console.log(user);
+    if(user.phoneNumber){
+      document.getElementById('profilePhone').value = phoneNumber;
+    }
+  //  let profileRef = db.collection('profiles').doc(`${user.uid}`);
+  //  let profileDoc =  profileRef.get().then(()=>{
+
+  //      document.getElementById('occupation').value = profileDoc.occupation
+  //      document.getElementById('address').value = profileDoc.address
+  //      document.getElementById('profilePhone').value = profileDoc.phoneNumber
+     
+  //   }).catch((error)=>{
+  //     alert("no profile"+error)
+  //   })
+    
+    // db.collection("profiles").doc(`${user.uid}`).get().then(function(querySnapshot)
+    //  {       console.log("****"+(querySnapshot.occupation)); 
+    // }); 
+
+
+
+
+  var docRef = db.collection("profiles").doc(`${user.uid}`);
+
+  docRef.get().then(function(doc) {
+    if (doc.exists) {
+      //  console.log(doc.data().phoneNumber)
+       document.getElementById('occupation').value = doc.data().occupation
+       document.getElementById('address').value = doc.data().address
+       document.getElementById('profilePhone').value = doc.data().phoneNumber
+    } else {
+       
+    }
+}).catch(function(error) {
+    console.log("Error getting document:", error);
+});
+  }
 })
 
 
