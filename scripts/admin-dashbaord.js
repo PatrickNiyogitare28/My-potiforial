@@ -48,6 +48,10 @@ auth.onAuthStateChanged(async(user)=>{
 }).catch(function(error) {
     console.log("Error getting document:", error);
 });
+   retreiveBlogs();
+   setTimeout(()=>{
+    listBlogs();
+   },10000)
   }
 })
 
@@ -178,7 +182,10 @@ function triggerBlogModal(event){
     }
   })
 }
-function triggerEditBlogModal(event){
+function triggerEditBlogModal(event,title){
+  if(title != ''){
+    alert(title)
+  }
   $(()=>{
     let editBlogModal = document.getElementById('editBlogModal');
     if(event == 'open'){

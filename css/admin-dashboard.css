@@ -486,3 +486,11 @@ display: flex;
        background: rgb(41, 85, 167) !important;
        display: none;
    }
+   #loader{
+       border-bottom: none;
+   }
+  
+   #loader td img{
+       width: 50px;
+       
+   }

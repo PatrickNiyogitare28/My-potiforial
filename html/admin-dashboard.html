@@ -9,6 +9,8 @@
         <link rel="stylesheet" href="../media/admin-landing-media.css">
         <link rel="stylesheet" href="../font-awesome-v4/css/font-awesome.min.css">
         <link rel="stylesheet" href="../css/toasters.css">
+    <link rel="icon" href="../assetes/Logos/my-logo.png">
+
       
     </head>
     <body>
@@ -255,7 +257,7 @@
                                     title="Create a New blog"></i>
                             </div>
 
-                            <table>
+                            <table id="listblogs">
                                 <tr>
                                     <th>#</th>
                                     <th>Blog Title</th>
@@ -265,7 +267,10 @@
                                     <th>Edit</th>
                                     <th>Delete</th>
                                 </tr>
-                                <tr>
+                                <tr id="loader">
+                                    <td><img src="../assetes/icons/loading-icon-transparent-background-12.jpg" alt=""></td>
+                                </tr>
+                                <!-- <tr>
                                     <td>1</td>
                                     <td>React Dommination until 2021</td>
                                     <td>Nelly Diane</td>
@@ -309,7 +314,7 @@
                                     <td><img src="../assetes/icons/comments-solid.svg" alt="comment-icon"></td>
                                     <td><img src="../assetes/icons/pen-solid.svg" alt="pen icon"></td>
                                     <td><img src="../assetes/icons/trash-alt-regular.svg" alt="trash icon"></td>
-                                </tr>
+                                </tr> -->
 
                             </table>
                         </div>
@@ -447,7 +452,7 @@ modal---------------------------------- -->
 
 <div id="editBlogModal" class="modal">
     <div class="edit-blog-container">
-        <span class="close" onclick="triggerEditBlogModal('close')">&times;</span>
+        <span class="close" onclick="triggerEditBlogModal('close','')">&times;</span>
         <div class="blog-strory-wrapper">
             <h2 contenteditable="true">React Dommination until 2021</h2>
             <img src="../assetes/react2.png" alt="blog image" class="blog-image">
