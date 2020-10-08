@@ -137,9 +137,14 @@ function createNewBlog(){
         }).then(()=>{
             blogForm.reset();
             successMessage.innerHTML="Blog created successfully"
+            retreiveBlogs();
             setTimeout(()=>{
                 successToaster.classList.remove('active');
             },3000)
+            setTimeout(()=>{
+                blogs.splice(0,blogs.length);
+                listBlogs();
+            },7000)
         })
          .catch(error => {
              console.log(error);
@@ -173,28 +178,14 @@ function retreiveBlogs(){
                 })
             }).catch(error =>{ console.log("Profile Error"+error)})
            
-            // doc.data() is never undefined for query doc snapshots
-            // console.log(doc.id, " => ", doc.data());
-            
-            // blogs.push({
-            //     title: doc.data().blogTitle,
-            //     body: doc.data().blogBody,
-            //     date: doc.data().date,
-            //     owner: "",
-            //     imageURL: ""
-            // });
-
-        });
-        setTimeout(() => {
-           displayBlog();
-        }, 5000);
-    })
+          });
+      })
     .catch(function(error) {
         console.log("Error getting documents: ", error);
     }); 
    
 }
-retreiveBlogs();
+
 
 
 function displayBlog(){
@@ -205,10 +196,10 @@ function displayBlog(){
   let blogBody = document.getElementById('blogBody');
 
   let size = blogs.length;
-  console.log(blogs)
+  
   title.innerHTML = blogs[size-1].title;
   image.src = blogs[size-1].imageURL;
-  owner.innerHTML = blogs[size-1].owner;
+  owner.innerHTML = ' by '+blogs[size-1].owner;
   date.innerHTML = blogs[size-1].date;
   blogBody.innerHTML= blogs[size-1].body;
 
@@ -249,7 +240,7 @@ function displayBlog(){
          if(blog.title == title){
               blogtitle.innerHTML = blog.title;
               blogimage.src = blog.imageURL;
-              blogowner.innerHTML = blog.owner;
+              blogowner.innerHTML = ' by '+blog.owner;
               blogdate.innerHTML = blog.date;
               blogContent.innerHTML = blog.body;
               $(window).scrollTop(0); 
@@ -257,4 +248,62 @@ function displayBlog(){
      })
  }
 
- 
+ function listBlogs(){
+     $(()=>{ $('#loader').css('display','none')})
+    let index = 1; 
+    blogs.forEach(blog => {
+        let table = document.getElementById('listblogs');
+        let tr = document.createElement('tr');
+        let indexTd = document.createElement('td');
+        let indexText = document.createTextNode(`${index}`);
+        indexTd.appendChild(indexText);
+
+        let titleTd = document.createElement('td');
+        let titleText = document.createTextNode(`${blog.title}`);
+        titleTd.appendChild(titleText);
+
+        let ownerTd = document.createElement('td');
+        let ownerText = document.createTextNode(`${blog.owner}`);
+        ownerTd.appendChild(ownerText);
+
+        let dateTd = document.createElement('td');
+        let dateText = document.createTextNode(`${blog.date}`);
+        dateTd.appendChild(dateText);
+
+        let commentTd = document.createElement('td');
+        commentIcon = document.createElement('img');
+        commentIcon.setAttribute('src','../assetes/icons/comments-solid.svg');
+        commentTd.appendChild(commentIcon);
+        
+        let editTd = document.createElement('td');
+        let editIcon = document.createElement('img');
+        editIcon.setAttribute('src','../assetes/icons/pen-solid.svg');
+        editTd.appendChild(editIcon);
+        editTd.setAttribute('onclick',`triggerEditBlogModal('open','${blog.title}')`)
+
+        let deleteTd = document.createElement('td');
+        let deleteIcon = document.createElement('img');
+        deleteIcon.setAttribute('src','../assetes/icons/trash-alt-regular.svg');
+        deleteTd.appendChild(deleteIcon);
+        
+       tr.appendChild(indexTd);
+       tr.appendChild(titleTd);
+       tr.appendChild(ownerTd);
+       tr.appendChild(dateTd);
+       tr.appendChild(commentTd);
+       tr.appendChild(editTd);
+       tr.appendChild(deleteTd);
+       table.appendChild(tr);
+        console.log(index);
+       index++;
+
+     })
+     
+ }
+//  <td>1</td>
+//                                     <td>React Dommination until 2021</td>
+//                                     <td>Nelly Diane</td>
+//                                     <td>12-08-2020</td>
+//                                     <td onclick="triggerReadCommentsModal('open')"><img src="../assetes/icons/comments-solid.svg" alt="comment-icon"></td>
+//                                     <td onclick="triggerEditBlogModal('open')"><img src="../assetes/icons/pen-solid.svg" alt="pen icon"></td>
+//                                     <td><img src="../assetes/icons/trash-alt-regular.svg" alt="trash icon"></td>
