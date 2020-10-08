@@ -30,24 +30,7 @@ auth.onAuthStateChanged(async(user)=>{
     if(user.phoneNumber){
       document.getElementById('profilePhone').value = phoneNumber;
     }
-  //  let profileRef = db.collection('profiles').doc(`${user.uid}`);
-  //  let profileDoc =  profileRef.get().then(()=>{
-
-  //      document.getElementById('occupation').value = profileDoc.occupation
-  //      document.getElementById('address').value = profileDoc.address
-  //      document.getElementById('profilePhone').value = profileDoc.phoneNumber
-     
-  //   }).catch((error)=>{
-  //     alert("no profile"+error)
-  //   })
-    
-    // db.collection("profiles").doc(`${user.uid}`).get().then(function(querySnapshot)
-    //  {       console.log("****"+(querySnapshot.occupation)); 
-    // }); 
-
-
-
-
+  
   var docRef = db.collection("profiles").doc(`${user.uid}`);
 
   docRef.get().then(function(doc) {
@@ -57,6 +40,9 @@ auth.onAuthStateChanged(async(user)=>{
        document.getElementById('address').value = doc.data().address
        document.getElementById('profilePhone').value = doc.data().phoneNumber
     } else {
+       doc.set({
+          Names: user.displayName
+       })
        
     }
 }).catch(function(error) {

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../media/blogs-media.css">
     <link rel="stylesheet" href="../font-awesome-v4/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@700&display=swap" rel="stylesheet">
-    <script src="../scripts/scripts.js"></script>
+  
 </head>
 <body>
     <header>
@@ -41,23 +41,13 @@
            </div> 
         <div class="blogs-container">
             <div class="blog-story-wrapper">
-                <h2>Will ReactJS Continue To Dominate In 2021?</h2>
-                <img src="../assetes/react2.png" alt="">
-                <small>20/09/2020 by Patrick Niyogitare</small>
-                <p>Developers always prefer a framework that breaks down difficult and 
-                    complicated components and makes it possible to finish the project faster by 
-                    creating reusable codes. Traditional JS frameworks like AngularJS or EmberJS 
-                    requires a developer to write a lot of code for creating a module or a component.
-                    The major reason behind the popularity of React JS in 2019 is that it does not demand
-                    any additional effort or rework from a developer. With the flexibility and robustness
-                    it offers, developers can easily build a complicated module faster and reuse 
-                    the code as much as needed in other modules, thereby ensuring a faster application that
-                    can be rendered easily in different browsers 
-                    with very little loading time. This makes it a perfect choice for developers who are 
-                    keen about cross browser compatibility.</p>
+                <h2 id="blogTitle"><img src="../assetes/icons/loading-icon-transparent-background-12.jpg" alt="" srcset=""></h2>
+                <img id="blogImage" src="" alt="">
+                <small><sapn id="date"></sapn>  by <span id="blogOwner"></span>  </small>
+                <p id="blogBody"></p>
             </div>
-            <div class="other-blogs-wrapper">
-                <div class="blog-item">
+            <div class="other-blogs-wrapper" id="otherBlogs">
+                <!-- <div class="blog-item">
                      <h3>The future of Angular</h3>
                      <img src="../assetes/angular-future.png" alt="">
                      <small>Read</small>
@@ -66,7 +56,7 @@
                     <h3>Programmer success</h3>
                     <img src="../assetes/10things.webp" alt="">
                     <small>Read</small>
-                </div>
+                </div> -->
             </div>
         </div>
     </main>
@@ -87,5 +77,15 @@
             </div>
         
     </footer>
+<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-storage.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-analytics.js"></script>
+<script src="../scripts/firebase.js"></script>
+<script src="../scripts/scripts.js"></script>
+<script src="../scripts/jquery-3.5.1.min.js"></script>
+<script src="../scripts/app.js"></script>
+
 </body>
 </html>

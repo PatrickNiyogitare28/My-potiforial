@@ -85,7 +85,7 @@ main{
 }
 .blog-story-wrapper{
     width: 65%;
-    /* height: 500px; */
+    height: auto;
     background: #494545;
     border-radius: 20px 20px;
    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
@@ -145,9 +145,9 @@ main{
     float: right;
     width: 100%;
     background-color: #494545;
-    height: 200px;
+    height: auto;
     border-radius: 20px 20px;
-   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
     margin-bottom: 2em;
 }
 
@@ -186,4 +186,8 @@ main{
 }
 .mobile-toggle-header{
     display: none;
+}
+#blogTitle img{
+    width: 50px !important;
+    height: 50px;
 }
