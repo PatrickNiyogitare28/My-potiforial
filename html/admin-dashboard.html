@@ -337,7 +337,8 @@
                                 </ul>
                             </nav>
                             <div class="notification-items-wrapper" id="notification-items-container">
-                                
+                                <img src="../assetes/icons/loading-icon-transparent-background-12.jpg" alt="" id="inquiryLoader">
+                              
                             </div>
                         </div>
                     </div>
@@ -450,8 +451,8 @@ modal---------------------------------- -->
           
           <div class="add-comment-wrapper">
               <label for="Comment">Comment</label>
-              <textarea name="" id="" cols="30" rows="5">Typye comment...</textarea>
-              <button>Comment</button>
+              <textarea name="" id="commentText" cols="30" rows="5">Typye comment...</textarea>
+              <button onclick="onSendComment()">Comment</button>
           </div>
     </div>
 </div>
@@ -459,11 +460,12 @@ modal---------------------------------- -->
 <!-- ------------------------------------------Read comments Modal------------------------------ -->
 <div class="modal" id="readCommentsModal">
     <div class="readComments-container">
-        <span class="close" onclick="triggerReadCommentsModal('close')">&times;</span>
+        <span class="close" onclick="triggerReadCommentsModal('close',0)">&times;</span>
         <div class="readComments-main-container">
            <h1>React Dommination until 2021</h1>
            <div class="comments-wrapper">
-            <table>
+            <table id="">
+            <table id="commentsTable">
                 <tr>
                     <th>#</th>
                     <th>Viewer</th>
@@ -471,7 +473,7 @@ modal---------------------------------- -->
                     <th>Date Commented</th>
                     <th>Delete</th>
                 </tr>
-                <tr>
+                <!-- <tr>
                     <td>1</td>
                     <td>Muhire Eric</td>
                     <td>Thank you for updating us on ReactJs, would you please let us have more VueJs</td>
@@ -505,7 +507,7 @@ modal---------------------------------- -->
                     <td>Hello this is good again! May you blogs us about defferences between React,Vue and Angular. Thanks</td>
                     <td>12-08-2020</td>
                     <td><img src="../assetes/icons/trash-alt-regular.svg" alt="trash icon"></td>
-                </tr>
+                </tr> -->
 
             </table>
         </div>

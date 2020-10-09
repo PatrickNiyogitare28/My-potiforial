@@ -1,6 +1,10 @@
 let today = new Date();
 let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
 let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+let comments=[]
+let blogImage = {};
+let successToaster =  document.getElementById('successToaster')
+let successMessage =  document.getElementById('successMessage')
 
 function onSendQuery(){
    let name = document.getElementById('name').value;
@@ -91,20 +95,25 @@ function updateUserProfile(){
                
            }).catch(error => alert(error))
         } else {
+           successToaster.classList.toggle('active');
+           successMessage.innerHTML="Updating profile...";  
            profileRef.update({
               Names: displayName,
               phoneNumber:phone, 
               occupation: occupation,
               address: address
           }).then(()=>{
+              successMessage.innerHTML="Profile updated successfully";
+              setTimeout(()=>{
+                  successToaster.classList.remove('active');
+              },3000)
+              
      }).catch()
  }
 })
 }
 
-let blogImage = {};
-let successToaster =  document.getElementById('successToaster')
-let successMessage =  document.getElementById('successMessage')
+
 function getBlogAttachement(event){
     if(event.target.files[0] != null){
         blogImage = event.target.files[0];
@@ -253,7 +262,7 @@ function displayBlog(){
      $(()=>{ $('#loader').css('display','none')})
     let index = 1; 
     blogs.forEach(blog => {
-        let table = document.getElementById('listblogs');
+         let table = document.getElementById('listblogs');
         let tr = document.createElement('tr');
         let indexTd = document.createElement('td');
         let indexText = document.createTextNode(`${index}`);
@@ -275,6 +284,7 @@ function displayBlog(){
         commentIcon = document.createElement('img');
         commentIcon.setAttribute('src','../assetes/icons/comments-solid.svg');
         commentTd.appendChild(commentIcon);
+        commentTd.setAttribute('onclick',`triggerReadCommentsModal('open','${blog.blogId}')`)
         
         let editTd = document.createElement('td');
         let editIcon = document.createElement('img');
@@ -362,6 +372,7 @@ getInquiries();
 function displayEquiries(){
     
    let itemsContainer =document.getElementById('notification-items-container');
+   document.getElementById('inquiryLoader').setAttribute('hidden',true);
    inquiriesArr.forEach((element)=>{
        itemsContainer.innerHTML+=`
        <div class="notification-item">
@@ -377,6 +388,59 @@ function displayEquiries(){
    
 }
 
+function onSendComment(){
+    let user = auth.currentUser;
+    let commentText = document.getElementById('commentText').value;
+    let commDate = date;
+    let commTime = time;
+    let blogId = document.getElementById('blogId').value;
+    
+
+    successToaster.classList.toggle('active');
+    successMessage.innerHTML = "Sending..."
+    db.collection('comments').doc().set({
+        commenter: user.uid,
+        comment: commentText,
+        date: commDate,
+        time: commTime,
+        blogId: blogId
+    }).then(()=>{
+         successMessage.innerHTML="Comment sent.";
+         setTimeout(()=>{
+             successToaster.classList.remove('active');
+         })
+    })
+    .catch((err)=>{
+        alert(err)
+    })
+}
+
+function fetchComments(blogId){
+//  alert("Hello"+blogId)
+  let commentTable = document.getElementById('commentsTable');
+//   let commentRows = "";  
+  db.collection('comments').doc().where("blogId", "==", `${blogId}`).get().then((comments)=>{
+      comments.forEach((com)=>{
+          db.collection('profiles').doc(com.commenter).get().then((commenter)=>{
+            commentTable.innerHTML+=`
+              <tr>
+              <td>${commenter.Names}</td>
+              <td>${com.comment}</td>
+              <td>${com.time}  ${com.date}</td>
+              <td><img src="../assetes/icons/trash-alt-regular.svg" alt="trash icon"></td>
+          </tr>
+              `
+          }).catch((profileError)=>{
+              alert("ProfileError: "+profileError)
+          })
+      })
+  }).catch((commentError)=>{
+    //   alert("CommentError: "+commentError)
+  })
+
+//   commentTable.appendChild(commentRows);
+}
+
 setTimeout(()=>{
     displayEquiries()
-},5000)
+},7000)

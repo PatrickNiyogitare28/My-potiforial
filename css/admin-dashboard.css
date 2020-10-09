@@ -494,3 +494,7 @@ display: flex;
        width: 50px;
        
    }
+   #inquiryLoader{
+       width: 40px;
+       margin-left: 50%;
+   }
