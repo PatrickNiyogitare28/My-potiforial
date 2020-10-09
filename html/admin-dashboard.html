@@ -33,7 +33,7 @@
                     <li id="logs-router" class="">
                         <i class="fa fa-sign-in nav-icon" aria-hidden="true"></i>Logs</li>
                     <li id="notifications-router" class="">
-                        <i class="fa fa-bell nav-icon" aria-hidden="true"></i>Notifications</li>
+                        <i class="fa fa-envelope nav-icon" aria-hidden="true"></i>Enquiries</li>
                 </ul>
             </div>
             <div class="main-content-container" id="main-content-container">
@@ -91,8 +91,8 @@
                                     <h3>21</h3>
                                 </div>
                                 <div class="control-item" onclick="onNavigate('notifications-router')">
-                                    <h4>Notifications</h4>
-                                    <h3>4</h3>
+                                    <h4>Enquiries</h4>
+                                    <h3>2</h3>
                                 </div>
                             </div>
 
@@ -332,36 +332,12 @@
                         <div class="notifactions-main-container">
                             <nav>
                                 <ul>
-                                    <li><h4>Notifications</h4></li>
+                                    <li><h4>Unread Enquiries</h4></li>
                                     <li onclick="checkNotifications()">Mark All as read</li>
                                 </ul>
                             </nav>
                             <div class="notification-items-wrapper" id="notification-items-container">
-                                <div class="notification-item">
-                                    <p><i class="fa fa-envelope nav-icon" aria-hidden="true"></i>
-                                        <span class="note-title">News Letter subscription</span> a new user subscribed to your 
-                                    news letter <small>2 min</small></p>
-                                    <input type="checkbox" name="" id="" class="checkbox">
-                                </div>
-                                <div class="notification-item">
-                                    <p><span class="note-title"><i class="fa fa-pencil-square-o nav-icon" aria-hidden="true"></i>
-                                         A new Blog is Created</span> admin added a new blog
-                                    news letter <small>30 min</small></p>
-                                    <input type="checkbox" name="" id="" class="checkbox">
-                                </div>
-                                <div class="notification-item">
-                                    <p><i class="fa fa-comment nav-icon" aria-hidden="true"></i><span class="note-title">
-                                        Blog comment</span> 
-                                       You received one blog comment from <span>Mutesi Neddy</span><small>2 hrs</small></p>
-                                    <input type="checkbox" name="" id="" class="checkbox">
-                                </div>
-                                <div class="notification-item">
-                                    <p><i class="fa fa-user nav-icon" aria-hidden="true"></i>
-                                        <span class="note-title">
-                                        New account created</span> 
-                                        a new user Signup with <span><u>kevin89@gmail.com</u> </span><small>1 Day</small></p>
-                                    <input type="checkbox" name="" id="" class="checkbox">
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -454,29 +430,20 @@ modal---------------------------------- -->
     <div class="edit-blog-container">
         <span class="close" onclick="triggerEditBlogModal('close','')">&times;</span>
         <div class="blog-strory-wrapper">
-            <h2 contenteditable="true">React Dommination until 2021</h2>
-            <img src="../assetes/react2.png" alt="blog image" class="blog-image">
-            <small>20/09/2020 by Patrick Niyogitare</small>
-            <p contenteditable="true">
-                Developers always prefer a framework that breaks down difficult and complicated
-                components and makes it possible to finish the project faster by creating
-                reusable codes. Traditional JS frameworks like AngularJS or EmberJS requires a
-                developer to write a lot of code for creating a module or a component. The major
-                reason behind the popularity of React JS in 2019 is that it does not demand any
-                additional effort or rework from a developer. With the flexibility and
-                robustness it offers, developers can easily build a complicated module faster
-                and reuse the code as much as needed in other modules, thereby ensuring a faster
-                application that can be rendered easily in different browsers with very little
-                loading time. This makes it a perfect choice for developers who are keen about
-                cross browser compatibility.
+            <input type="text" value="" id="blogId" hidden>
+            <h2 contenteditable="true" id="blogHeader"></h2>
+            <img src="../assetes/react2.png" alt="blog image" class="blog-image" id="blogImage">
+            <small><span id="blogDate"></span> by <span id="blogOwner"></span></small>
+            <p contenteditable="true" id="blogContent">
+                
             </p>
         </div>
         <div class="actions-wrapper">
-           <input type="file" name="new-blog-image" hidden id="new-blog-image">
+           <input type="file" name="new-blog-image" hidden id="new-blog-image" onchange="getNewBlogImage(event)">
            <button onclick="triggerFileInput('new-blog-image')">Change Blog Image</button> 
           
            <button class="reset-blog-btn">Reset</button> 
-           <div class="save-btn-wrapper" title="Save Changes">
+           <div class="save-btn-wrapper" title="Save Changes" onclick="updateBlog()">
             <i class="fa fa-floppy-o" aria-hidden="true"></i>
           </div>
           </div>
