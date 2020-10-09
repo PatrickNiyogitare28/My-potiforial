@@ -182,10 +182,8 @@ function triggerBlogModal(event){
     }
   })
 }
-function triggerEditBlogModal(event,title){
-  if(title != ''){
-    alert(title)
-  }
+function triggerEditBlogModal(event,blogId){
+  setEditableBlog(blogId)
   $(()=>{
     let editBlogModal = document.getElementById('editBlogModal');
     if(event == 'open'){
@@ -201,6 +199,27 @@ function triggerEditBlogModal(event,title){
     }
   })
   
+}
+
+function setEditableBlog(blogId){
+  let blogPostId = document.getElementById('blogId');
+  let blogHeader = document.getElementById('blogHeader');
+  let blogContent = document.getElementById('blogContent');
+  let blogImage = document.getElementById('blogImage');
+  let blogDate = document.getElementById('blogDate');
+  let blogOwner = document.getElementById('blogOwner');
+
+
+    blogs.forEach(blog => {
+      if(blog.blogId == blogId){
+          blogPostId.value = blog.blogId,
+          blogHeader.innerHTML = blog.title,
+          blogContent.innerHTML = blog.body,
+          blogImage.src = blog.imageURL,
+          blogDate.innerHTML = blog.date,
+          blogOwner.innerHTML = blog.owner
+      }
+    })
 }
 
 function triggerReadCommentsModal(event){

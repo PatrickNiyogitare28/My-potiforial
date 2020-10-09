@@ -167,6 +167,7 @@ function retreiveBlogs(){
                 console.log(profile.data().Names)
                 storage.ref(doc.data().imageURL).getDownloadURL().then((imageURL)=>{
                      blogs.push({
+                        blogId: doc.id, 
                         title: doc.data().title,
                         body: doc.data().blogBody,
                         date: doc.data().date,
@@ -279,7 +280,7 @@ function displayBlog(){
         let editIcon = document.createElement('img');
         editIcon.setAttribute('src','../assetes/icons/pen-solid.svg');
         editTd.appendChild(editIcon);
-        editTd.setAttribute('onclick',`triggerEditBlogModal('open','${blog.title}')`)
+        editTd.setAttribute('onclick',`triggerEditBlogModal('open','${blog.blogId}')`)
 
         let deleteTd = document.createElement('td');
         let deleteIcon = document.createElement('img');
@@ -300,10 +301,82 @@ function displayBlog(){
      })
      
  }
-//  <td>1</td>
-//                                     <td>React Dommination until 2021</td>
-//                                     <td>Nelly Diane</td>
-//                                     <td>12-08-2020</td>
-//                                     <td onclick="triggerReadCommentsModal('open')"><img src="../assetes/icons/comments-solid.svg" alt="comment-icon"></td>
-//                                     <td onclick="triggerEditBlogModal('open')"><img src="../assetes/icons/pen-solid.svg" alt="pen icon"></td>
-//                                     <td><img src="../assetes/icons/trash-alt-regular.svg" alt="trash icon"></td>
+
+ 
+let newBlogImage="";
+function getNewBlogImage(event){
+   if(event.target.files[0] != null){
+       newBlogImage = event.target.files[0];
+   }
+} 
+function updateBlog(){
+    let blogId = document.getElementById('blogId').value;
+    let blogHeader = document.getElementById('blogHeader').innerHTML;
+    let blogContent = document.getElementById('blogContent').innerHTML;
+    
+    let successToaster =  document.getElementById('successToaster')
+    let successMessage = document.getElementById('successMessage');
+
+    
+    successToaster.classList.toggle('active');
+    successMessage.innerHTML = "Updating blog.."
+
+    if(newBlogImage != ""){
+        storage.ref(`blogs/${blogId}/blogImage.jpg`).put(newBlogImage)
+    }
+    db.collection('blogs').doc(blogId).update({
+        title: blogHeader,
+        blogBody: blogContent
+    })
+    .then(() => {
+       successMessage.innerHTML = "Blog updted"
+        setTimeout(()=>{
+            successToaster.classList.remove('active')
+        },3000)
+        retreiveBlogs()
+    })
+    .catch(function(error) {
+        // The document probably doesn't exist.
+       alert("Error updating document: ", error);
+    });
+    
+}
+
+var inquiriesArr =[];
+function getInquiries(){
+   
+  db.collection('inquiries').get().then((inquiries)=>{
+        inquiries.forEach((query)=>{
+            inquiriesArr.push({
+                person: query.data().name,
+                email: query.data().email,
+                date: query.data().date,
+                time: query.data().time,
+                message: query.data().inquiry
+            })
+        })
+    }).catch(error=> alert(error))
+}
+getInquiries();
+
+function displayEquiries(){
+    
+   let itemsContainer =document.getElementById('notification-items-container');
+   inquiriesArr.forEach((element)=>{
+       itemsContainer.innerHTML+=`
+       <div class="notification-item">
+       <p><i class="fa fa-envelope nav-icon" aria-hidden="true"></i>
+           <span class="note-title">${element.person}  ${element.email}</span> 
+            ${element.message}
+           <small>2${element.time}    ${element.date}</small></p>
+       <input type="checkbox" name="" id="" class="checkbox">
+   </div>
+       `
+   })
+  
+   
+}
+
+setTimeout(()=>{
+    displayEquiries()
+},5000)
