@@ -222,10 +222,14 @@ function setEditableBlog(blogId){
     })
 }
 
-function triggerReadCommentsModal(event){
+function triggerReadCommentsModal(event,blogId){
+  // alert("calling.")
+  
+
   $(()=>{
     let readCommentsModal = document.getElementById('readCommentsModal');
     if(event == 'open'){
+      fetchComments(blogId);
       $('#readCommentsModal').fadeIn();
     }  
     else if(event == 'close'){
