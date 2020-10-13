@@ -1,6 +1,7 @@
 let image = document.getElementById('profile-image');
 let bannerProfileImage = document.getElementById('banner-profile-image');
 let profileImage = document.getElementById('profileImage');
+let updatableUserId="";
 
 auth.onAuthStateChanged(async(user)=>{
   if(!user){
@@ -26,7 +27,7 @@ auth.onAuthStateChanged(async(user)=>{
       alert(err)
     })
     }
-     console.log(user);
+    
     if(user.phoneNumber){
       document.getElementById('profilePhone').value = phoneNumber;
     }
@@ -36,9 +37,39 @@ auth.onAuthStateChanged(async(user)=>{
   docRef.get().then(function(doc) {
     if (doc.exists) {
       //  console.log(doc.data().phoneNumber)
-       document.getElementById('occupation').value = doc.data().occupation
-       document.getElementById('address').value = doc.data().address
-       document.getElementById('profilePhone').value = doc.data().phoneNumber
+
+       if(doc.data().occupation){
+           document.getElementById('occupation').value = doc.data().occupation
+       }
+      if(doc.data().address){
+          document.getElementById('address').value = doc.data().address
+      }
+      if(doc.data().phoneNumber){
+         document.getElementById('profilePhone').value = doc.data().phoneNumber
+      }
+       let usersRouter = document.getElementById('users-router');
+       let logsRouter = document.getElementById('logs-router');
+       let notificationsRouter = document.getElementById('notifications-router');
+       let usersControl = document.getElementById('users-control');
+       let logsControl = document.getElementById('logs-control');
+       let notificationControl = document.getElementById('notifications-control');
+       let userType = document.getElementById("userType")
+
+       if(doc.data().role == 'admin'){
+          userType.innerHTML = "Admin";
+          usersRouter.removeAttribute('hidden');
+          logsRouter.removeAttribute('hidden');
+          notificationsRouter.removeAttribute('hidden');
+          usersControl.removeAttribute('hidden');
+          logsControl.removeAttribute('hidden');
+          notificationControl.removeAttribute('hidden');
+          
+        }
+       
+       else{
+          userType.innerHTML="Std User";
+         
+       }
     } else {
        doc.set({
           Names: user.displayName
@@ -80,6 +111,57 @@ function changeMyProfilePicture(){
     })
   }
 }
+
+
+
+
+function changeRole(){
+  let roleSelect = document.getElementById('changeRoles');
+  db.collection('profiles').doc(`${updatableUserId}`).get().then((updatableUser)=>{
+    if(updatableUser.data().role == 'admin'){
+      roleSelect.innerHTML=`
+      <option value="2">Admin</option>
+      <option value="1">Stardard User</option>
+    `
+    }
+    else{
+        roleSelect.innerHTML=`
+        <option value="1">Stardard User</option>
+        <option value="2">Admin</option>
+        `
+    }
+  })
+}
+
+function updateUserRole(){
+  let successToaster =  document.getElementById('successToaster')
+  let successMessage =  document.getElementById('successMessage')
+
+  let newRole = document.getElementById('changeRoles');
+  if(newRole.value == 2){
+    db.collection('profiles').doc(`${updatableUserId}`).update({
+      role: 'admin'
+    }).then(()=>{
+      successToaster.classList.toggle('active');
+      successMessage.innerHTML="User Role updated to admin";
+      setTimeout(()=>{
+         successToaster.classList.remove('active');
+      },4000)
+    })
+  }
+  else{
+    db.collection('profiles').doc(`${updatableUserId}`).update({
+      role: 'stdUser'
+    }).then(()=>{
+      successToaster.classList.toggle('active');
+      successMessage.innerHTML="User Role updated to stardardUser";
+      setTimeout(()=>{
+         successToaster.classList.remove('active');
+      },4000)
+    })
+  }
+}
+
 
 $(()=>{
     $('#darshboard-router').click(()=>{
@@ -150,7 +232,9 @@ function triggerFileInput(fieldId){
 }
 
 
-function triggerUpdateUserModal(){
+function triggerUpdateUserModal(userId){
+  updatableUserId=userId;
+  changeRole();
   $(()=>{
     var modal = document.getElementById("myModal");
     $('#myModal').fadeIn();
@@ -296,3 +380,4 @@ function createUser(){
     alert(error);
   })
 }
+
