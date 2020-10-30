@@ -378,10 +378,10 @@ function displayEquiries(){
        itemsContainer.innerHTML+=`
        <div class="notification-item">
        <p><i class="fa fa-envelope nav-icon" aria-hidden="true"></i>
-           <span class="note-title">${element.person}  ${element.email}</span> 
+           <span class="note-title">${element.person}   <a href = "mailto: ${element.email}">Send Email</a> ${element.email}</span> 
             ${element.message}
            <small>2${element.time}    ${element.date}</small></p>
-       <input type="checkbox" name="" id="" class="checkbox">
+       <input type="checkbox" name="" id="" class="checkbox" >
    </div>
        `
    })
