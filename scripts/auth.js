@@ -12,33 +12,27 @@ const addUser = ()=>{
     if(!error){
         document.getElementById('signUpToaster').classList.toggle('active');
         auth.createUserWithEmailAndPassword(email,password).then(async authUser => {
-            const user = auth.currentUser;
+            const user = await auth.currentUser;
             if(user){
-                const profileRef = db.collection('profiles').doc(`${user.uid}`);
-                const doc = await profileRef.get();
-                if (!doc.exists) {
-                        profileRef.set({
+                const profileRef = await db.collection('profiles').doc(`${user.uid}`);
+                profileRef.set({
                         Names: name,
                         email: email,
                         role: 'stdUser',
                         createdDate: theDate
                        
                 }).then(()=>{
-               
-           }).catch(error => alert(error)) 
-        }
-               user.updateProfile({
+                    user.updateProfile({
                         displayName: name
-                        
-                    }).then((result)=>{
-                        console.log(result);
+                        }).then((result)=>{
                         signupForm.reset();
                         window.location.href="../html/singin.html";
                     }).catch((err)=>{
                         alert(err)
                     })
-                
-            }
+               
+           }).catch(error => alert(error)) 
+          }
         }) .catch(error => {
             alert(error);
         })
@@ -66,7 +60,7 @@ function singUpUser(){
 function getUsers(){
     var docRef = db.collection("users");
     docRef.get().then((doc) => {
-     console.log(doc)  
+    //  console.log(doc)  
     }).catch((error)  =>{
         console.log("Error getting document:", error);
     });
@@ -121,16 +115,16 @@ function getUsers(){
     let usersTable = document.getElementById('usersTable');
     let index = 0;
     db.collection('profiles').get().then((users)=>{
+        // console.log('////// '+JSON.stringify(users));
       users.forEach((user)=>{
           index+=1;
           usersTable.innerHTML+=`
       <tr>
-        
           <td>${index}</td>
           <td>${user.data().Names}</td>
           <td>${user.data().email}</td>
           <td>${user.data().createdDate}</td>
-          <td class="offline">Offline</td>
+          <td class="online">Active</td>
           <td onclick="triggerUpdateUserModal('${user.id}')" id="myBtn" class="action-edit">
              <img src="../assetes/icons/pen-solid.svg" alt="pen icon">
           </td>
