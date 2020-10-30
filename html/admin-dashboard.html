@@ -17,7 +17,7 @@
         <main>
             <div class="sidebar-container" id="sidebar-container">
                 <div class="sidebar-header">
-                    <h1>Admin</h1>
+                    <h1 id="userType"></h1>
                 </div>
 
                 <ul class="navigation" id="navigation">
@@ -25,14 +25,14 @@
                         <i class="fa fa-columns nav-icon" aria-hidden="true"></i>Dashboard</li>
                     <li id="profile-router" class="">
                         <i class="fa fa-user nav-icon" aria-hidden="true"></i>Profile</li>
-                    <li id="users-router" class="">
+                    <li id="users-router" class="" hidden>
                         <i class="fa fa-users nav-icon" aria-hidden="true"></i>
                         Users</li>
                     <li id="blogs-router" class="">
                         <i class="fa fa-pencil-square-o nav-icon" aria-hidden="true"></i>Blogs</li>
-                    <li id="logs-router" class="">
+                    <li id="logs-router" class="" hidden>
                         <i class="fa fa-sign-in nav-icon" aria-hidden="true"></i>Logs</li>
-                    <li id="notifications-router" class="">
+                    <li id="notifications-router" class="" hidden>
                         <i class="fa fa-envelope nav-icon" aria-hidden="true"></i>Enquiries</li>
                 </ul>
             </div>
@@ -78,7 +78,7 @@
                                 <div class="control-item" onclick="onNavigate('profile-router')">
                                     <h4>Profile</h4>
                                 </div>
-                                <div class="control-item" onclick="onNavigate('users-router')">
+                                <div class="control-item" onclick="onNavigate('users-router')" id="users-control" hidden>
                                     <h4>Users</h4>
                                     <h3>5</h3>
                                 </div>
@@ -86,11 +86,11 @@
                                     <h4>Blogs</h4>
                                     <h3>5</h3>
                                 </div>
-                                <div class="control-item" onclick="onNavigate('logs-router')">
+                                <div class="control-item" onclick="onNavigate('logs-router')" id="logs-control" hidden>
                                     <h4>Logs</h4>
                                     <h3>21</h3>
                                 </div>
-                                <div class="control-item" onclick="onNavigate('notifications-router')">
+                                <div class="control-item" onclick="onNavigate('notifications-router')" id="notifications-control" hidden>
                                     <h4>Enquiries</h4>
                                     <h3>2</h3>
                                 </div>
@@ -169,7 +169,7 @@
                                 <i class="fa fa-plus-circle" aria-hidden="true" onclick="triggerCreateNewUserModal('open')" title="Create a New user"></i>
                             </div>
 
-                            <table>
+                            <table id="usersTable">
                                 <tr>
                                     <th>#</th>
                                     <th>Names</th>
@@ -179,7 +179,7 @@
                                     <th>Update</th>
                                     <th>Delete</th>
                                 </tr>
-                                <tr>
+                                <!-- <tr>
                                     <td>1</td>
                                     <td>Muhire Eric</td>
                                     <td>muhieric@gmail.com</td>
@@ -242,7 +242,7 @@
                                      <td class="action-delete">
                                         <img src="../assetes/icons/trash-alt-regular.svg" alt="trash icon">
                                      </td>  
-                                </tr>
+                                </tr> -->
 
                             </table>
                         </div>
@@ -369,12 +369,11 @@ modal---------------------------------- -->
     <div class="modal-content">
         <span class="close">&times;</span>
         <div class="userUpdate-form-wrapper">
-            <form action="">
+            <form action="" onsubmit="event.preventDefault()">
                 <div class="input-wrapper">
                     <label for="Names">Update Role</label>
-                    <select name="" id="">
-                        <option value="">Stardard User</option>
-                        <option value="">Admin</option>
+                    <select name="" id="changeRoles">
+                        
                     </select>
                 </div>
               <div class="input-wrapper">
@@ -388,7 +387,7 @@ modal---------------------------------- -->
 
                 <div class="input-wrapper save-btn modal-footer-btn-wrapper">
                     <button class="close-account-btn">Close Account</button>
-                    <button>Save Changes</button>
+                    <button onclick="updateUserRole()">Save Changes</button>
                 </div>
             </form>
         </div>

@@ -1,4 +1,7 @@
 let file = {};
+let todayDate = new Date();
+let theDate = todayDate.getFullYear()+'-'+(todayDate.getMonth()+1)+'-'+todayDate.getDate();
+
 const addUser = ()=>{
     const signupForm = document.querySelector('#form');
     const name = document.getElementById('name').value;
@@ -16,6 +19,9 @@ const addUser = ()=>{
                 if (!doc.exists) {
                         profileRef.set({
                         Names: name,
+                        email: email,
+                        role: 'stdUser',
+                        createdDate: theDate
                        
                 }).then(()=>{
                
@@ -111,6 +117,30 @@ function resetSingInForm(){
         $('#errorBox').removeClass('active'); 
     })
 }
-
-
+function getUsers(){
+    let usersTable = document.getElementById('usersTable');
+    let index = 0;
+    db.collection('profiles').get().then((users)=>{
+      users.forEach((user)=>{
+          index+=1;
+          usersTable.innerHTML+=`
+      <tr>
+        
+          <td>${index}</td>
+          <td>${user.data().Names}</td>
+          <td>${user.data().email}</td>
+          <td>${user.data().createdDate}</td>
+          <td class="offline">Offline</td>
+          <td onclick="triggerUpdateUserModal('${user.id}')" id="myBtn" class="action-edit">
+             <img src="../assetes/icons/pen-solid.svg" alt="pen icon">
+          </td>
+          <td class="action-delete">
+             <img src="../assetes/icons/trash-alt-regular.svg" alt="trash icon">
+          </td>
+       </tr>
+          `
+      })
+    })
+}
+getUsers();
 
