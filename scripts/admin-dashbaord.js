@@ -36,6 +36,7 @@ auth.onAuthStateChanged(async(user)=>{
 
   docRef.get().then(function(doc) {
     if (doc.exists) {
+        // alert(JSON.stringify(doc))
       //  console.log(doc.data().phoneNumber)
 
        if(doc.data().occupation){

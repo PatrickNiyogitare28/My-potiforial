@@ -71,10 +71,11 @@ function updateUserProfile(){
     let email = document.getElementById('profileEmail').value
     let occupation = document.getElementById('occupation').value
     let address = document.getElementById('address').value
-   
+    
     auth.onAuthStateChanged(async(user)=>{
         if(!user){return window.location.href="../index.html"}
-          
+            successToaster.classList.toggle('active');
+            successMessage.innerHTML="Updating profile...";
            user.updateEmail(email).catch((err)=> alert(err));
            user.updateProfile({
             displayName: displayName,
@@ -95,13 +96,13 @@ function updateUserProfile(){
                
            }).catch(error => alert(error))
         } else {
-           successToaster.classList.toggle('active');
-           successMessage.innerHTML="Updating profile...";  
+             
            profileRef.update({
               Names: displayName,
               phoneNumber:phone, 
               occupation: occupation,
-              address: address
+              address: address,
+              role:'stdUser'
           }).then(()=>{
               successMessage.innerHTML="Profile updated successfully";
               setTimeout(()=>{
